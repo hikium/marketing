@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts */
+@layer base {
+  html {
+    font-family: "Public Sans", system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Dosis", system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  b {
+    font-weight: 600;
+  }
+  sup {
+    font-size: 0.7rem;
+    display: inline-flex;
+    align: top;
+  }
+  a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}

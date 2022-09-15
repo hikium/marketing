@@ -1,4 +1,4 @@
-export function ECLogo() {
+export default function ECIcon() {
   return (
     <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 145">
       <path

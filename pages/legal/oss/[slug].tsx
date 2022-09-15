@@ -22,7 +22,7 @@ interface OSPageTypes {
   descriptionPath: string;
 }
 
-export default function LegalPages({
+export default function OSSLegalPages({
   source,
   componentOverrides,
 }: OSPageTypes) {
@@ -49,7 +49,7 @@ export default function LegalPages({
     </>
   );
 }
-LegalPages.getLayout = function getLayout(page: ReactElement) {
+OSSLegalPages.getLayout = function getLayout(page: ReactElement) {
   return <Layout manualMargin={false}>{page}</Layout>;
 };
 
@@ -63,7 +63,7 @@ interface PathProps {
 // @ts-ignore
 export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
   // Find Markdown files
-  const filePath = path.join(`public/markdown/legal`, `${params.slug}.mdx`);
+  const filePath = path.join(`public/markdown/legal/oss`, `${params.slug}.mdx`);
   const source = fs.readFileSync(filePath);
 
   // Use the files to parse MDX
@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
   };
 };
 export const getStaticPaths = async () => {
-  const pageContentPath = path.join(process.cwd(), "public/markdown/legal");
+  const pageContentPath = path.join(process.cwd(), "public/markdown/legal/oss");
 
   const pageFilePaths = fs
     .readdirSync(pageContentPath)

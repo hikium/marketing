@@ -37,20 +37,19 @@ export default function Button({
     <>
       {!children ? (
         <m.button
-          className={`bg-white/90 dark:bg-slate-800/70 p-3 rounded-lg dark:shadow-gray-800 ${
+          className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-full ${
             isLoading
-              ? "shadow-none"
+              ? "shadow-inner"
               : isActive
-              ? "shadow-xl z-10"
-              : "shadow-sm"
+              ? "shadow-sm z-10"
+              : "shadow-inner"
           } w-full`}
-          style={{
-            cursor: isLoading ? "not-allowed" : "pointer",
-            textDecoration: "none",
-          }}
+          style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
           onClick={onClick}
-          whileHover={{ scale: isLoading ? 1 : 0.97 }}
-          whileTap={{ scale: isLoading ? 1 : isActive ? 0.85 : 0.75 }}
+          whileHover={{
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+          }}
+          whileTap={{ scale: 0.98 }}
         >
           {icon ? <div className="flex justify-center">{icon}</div> : ""}
         </m.button>
@@ -58,12 +57,12 @@ export default function Button({
         <>
           {isDisabled ? (
             <m.button
-              className={`bg-white/90 dark:bg-slate-800/70 p-3 rounded-lg text-gray-400 dark:shadow-gray-800 shadow-none w-full`}
-              style={{ cursor: "not-allowed", textDecoration: "none" }}
+              className="bg-gray-800/5 dark:bg-white/5 p-3 rounded-lg text-gray-400 dark:shadow-gray-800 shadow-none w-full"
+              style={{ cursor: "not-allowed" }}
               disabled={true}
               aria-disabled={true}
             >
-              <div className="flex flex-row space-x-2">
+              <div className="flex flex-row space-x-2 items-center">
                 <div className="flex-none">{icon}</div>
                 <div className="flex-1">{children}</div>
                 <div />
@@ -73,80 +72,77 @@ export default function Button({
             <>
               {href ? (
                 <m.a
-                  className={`bg-white/90 dark:bg-slate-800/70 p-3 rounded-lg dark:shadow-gray-800 ${
+                  className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-lg ${
                     isLoading
-                      ? "shadow-none"
+                      ? "shadow-inner"
                       : isActive
-                      ? "shadow-xl z-10"
-                      : "shadow-sm"
+                      ? "shadow-sm z-10"
+                      : "shadow-inner"
                   }`}
                   style={{
                     cursor: isLoading ? "not-allowed" : "pointer",
                     textDecoration: "none",
                   }}
                   onClick={onClick}
-                  whileHover={{ scale: isLoading ? 1 : 0.97 }}
-                  whileTap={{ scale: isLoading ? 1 : isActive ? 0.85 : 0.75 }}
+                  whileHover={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
                   href={href}
                   target={(openInNewTab && "_blank") || undefined}
                 >
                   {icon ? (
                     // Keep children in the center but keep icon on the
                     // left side of the button
-                    <div className="flex flex-row space-x-2">
+                    <div className="flex flex-row space-x-2 items-center">
                       <div className="flex-none">{icon}</div>
                       <div className="flex-1">
                         {isLoading ? (
-                          <div className="flex flex-row justify-center">
+                          <div className="flex justify-center">
                             <LoadingBar />
                           </div>
                         ) : (
-                          <div className="flex flex-row justify-center">
-                            {children}
-                          </div>
+                          <div className="flex justify-center">{children}</div>
                         )}
                       </div>
                       <div />
                     </div>
                   ) : isLoading ? (
-                    <div className="flex flex-row justify-center">
+                    <div className="flex justify-center">
                       <LoadingBar />
                     </div>
                   ) : (
-                    <div className="flex flex-row justify-center">
-                      {children}
-                    </div>
+                    <div className="flex justify-center">{children}</div>
                   )}
                 </m.a>
               ) : (
                 <m.button
-                  className={`bg-white/90 dark:bg-slate-800/70 p-3 rounded-lg dark:shadow-gray-800 ${
+                  className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-lg ${
                     isLoading
-                      ? "shadow-none"
+                      ? "shadow-inner"
                       : isActive
-                      ? "shadow-xl z-10"
-                      : "shadow-sm"
+                      ? "shadow-sm z-10"
+                      : "shadow-inner"
                   } w-full`}
-                  style={{
-                    cursor: isLoading ? "not-allowed" : "pointer",
-                    textDecoration: "none",
-                  }}
+                  style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
                   onClick={onClick}
-                  whileHover={{ scale: isLoading ? 1 : 0.97 }}
-                  whileTap={{ scale: isLoading ? 1 : isActive ? 0.85 : 0.75 }}
+                  whileHover={{
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {icon ? (
                     // Keep children in the center but keep icon on the
                     // left side of the button
-                    <div className="flex flex-row space-x-2">
+                    <div className="flex flex-row space-x-2 items-center">
                       <div className="flex-none">{icon}</div>
                       <div className="flex-1">
                         {isLoading ? (
-                          <div className="flex flex-row justify-center">
+                          <div className="flex justify-center">
                             <LoadingBar />
                           </div>
                         ) : (
-                          <div className="flex flex-row justify-center">
+                          <div className="flex items-center justify-center">
                             {children}
                           </div>
                         )}
@@ -154,14 +150,11 @@ export default function Button({
                       <div />
                     </div>
                   ) : isLoading ? (
-                    <div className="flex flex-row justify-center">
+                    <div className="flex justify-center">
                       <LoadingBar />
                     </div>
                   ) : (
-                    <div
-                      className="flex flex-row justify-center"
-                      aria-label={ariaLabel}
-                    >
+                    <div className="flex justify-center" aria-label={ariaLabel}>
                       {children}
                     </div>
                   )}

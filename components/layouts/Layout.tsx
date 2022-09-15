@@ -67,32 +67,19 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
         <div className="flex flex-col space-y-1 text-sm">
           <Link href="/legal/privacy">
             <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
-              Hikium Privacy Statement
-            </a>
-          </Link>
-          {/* <Link href="/legal/terms">
-            <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
-              Hikium Experience Composer Terms of Usage
-            </a>
-          </Link> */}
-          {/* <Link href="/legal/security">
-            <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
-              Responsible Disclosure
-            </a>
-          </Link> */}
-          <Link href="/legal/team-affiliation">
-            <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
-              Project Affiliation Notice
+              Privacy
             </a>
           </Link>
           <Link href="/legal">
             <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
-              Additional Legal Notices
+              Terms and Legal
             </a>
           </Link>
-          <p className="text-gray-600 dark:text-gray-400">
-            Hikium doesn't use cookies
-          </p>
+          <Link href="/legal/project-affiliation">
+            <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
+              Project Affiliation
+            </a>
+          </Link>
         </div>
       </footer>
     </div>

@@ -41,9 +41,11 @@ export default function LegalPages({
         />
       </Head>
 
-      <MDXProvider>
-        <MDXRemote {...source} components={componentOverrides} />
-      </MDXProvider>
+      <main>
+        <MDXProvider>
+          <MDXRemote {...source} components={componentOverrides} />
+        </MDXProvider>
+      </main>
     </>
   );
 }

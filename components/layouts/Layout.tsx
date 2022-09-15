@@ -20,14 +20,14 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
         !manualMargin && "px-5 lg:px-52"
       } min-h-screen`}
     >
-      <header className={`${manualMargin && "px-5 lg:px-52"} pt-10 w-fit`}>
+      <nav className={`${manualMargin && "px-5 lg:px-52"} pt-10 w-fit`}>
         <Link href="/" passHref>
           <div className="w-20 h-4 cursor-pointer">
             <BrandWordmark />
           </div>
         </Link>
-      </header>
-      <main className="flex-1">{children}</main>
+      </nav>
+      <div className="flex-1">{children}</div>
       <footer
         className={`${
           manualMargin && "px-5 lg:px-52"

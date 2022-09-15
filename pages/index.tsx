@@ -12,7 +12,7 @@ import Layout from "components/layouts/Layout";
 
 export default function Home() {
   return (
-    <div className="flex flex-col py-2">
+    <>
       <Head>
         <title>Hikium</title>
         <meta
@@ -26,7 +26,7 @@ export default function Home() {
         />
       </Head>
 
-      <div className="flex flex-col space-y-48">
+      <main className="flex flex-col space-y-48">
         <section className="flex flex-col space-y-10 px-5 lg:px-52">
           <div className="flex flex-col space-y-0">
             <div className="flex flex-row md:space-x-5">
@@ -70,8 +70,8 @@ export default function Home() {
         <section className="flex flex-col space-y-0 mx-5 lg:mx-52 text-sm text-gray-600 dark:text-gray-400 lg:w-1/3">
           <p>Early development version. Features may change before release.</p>
         </section>
-      </div>
-    </div>
+      </main>
+    </>
   );
 }
 Home.getLayout = function getLayout(page: ReactElement) {

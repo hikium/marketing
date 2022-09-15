@@ -24,10 +24,14 @@ export default function Legal() {
       </Head>
 
       <div className="flex flex-col space-y-10">
-        <h1>Hikium Legal</h1>
-        <div className="bg-black/10 dark:bg-white/10 px-5 py-2 font-display uppercase text-sm rounded-2xl w-fit">
-          Coming Soon
-        </div>
+        <header>
+          <h1>Hikium Legal</h1>
+        </header>
+        <main>
+          <div className="bg-black/10 dark:bg-white/10 px-5 py-2 font-display uppercase text-sm rounded-2xl w-fit">
+            Coming Soon
+          </div>
+        </main>
       </div>
     </div>
   );

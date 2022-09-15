@@ -59,9 +59,9 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
               Terms and Legal
             </a>
           </Link>
-          <Link href="/legal/project-affiliation">
+          <Link href="/legal/security">
             <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
-              Project Affiliation
+              Responsible Disclosure
             </a>
           </Link>
         </div>

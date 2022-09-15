@@ -1,11 +1,9 @@
 // Routing
 import Link from "next/link";
 
-// Design
-import { IconExternalLink } from "@tabler/icons";
-
 // First party components
 import BrandWordmark from "components/brand/BrandWordmark";
+import ExternalLink from "components/system/ExternalLink";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,34 +33,20 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
       >
         <div className="flex flex-col space-y-1 text-sm">
           <p className="text-gray-600 dark:text-gray-400">Follow our hike</p>
-          <Link href="https://twitter.com/hikium" passHref>
-            <a
-              target="_blank"
-              className="text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer flex flex-row space-x-2"
-            >
-              <span className="underline underline-offset-4">
-                Twitter @hikium
-              </span>
-              {/* Center the icon with the parent*/}
-              <span className="flex items-center justify-center">
-                <IconExternalLink width={12} height={12} />
-              </span>
-            </a>
-          </Link>
+          <ExternalLink
+            href="https://twitter.com/hikium"
+            className="text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer flex flex-row space-x-2"
+          >
+            Twitter @hikium
+          </ExternalLink>
         </div>
         <div className="flex flex-col space-y-1 text-sm">
-          <Link href="https://github.com/hikium" passHref>
-            <a
-              target="_blank"
-              className="text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer flex flex-row space-x-2"
-            >
-              <span className="underline underline-offset-4">GitHub</span>
-              {/* Center the icon with the parent*/}
-              <span className="flex items-center justify-center">
-                <IconExternalLink width={12} height={12} />
-              </span>
-            </a>
-          </Link>
+          <ExternalLink
+            href="https://github.com/hikium"
+            className="text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer flex flex-row space-x-2"
+          >
+            GitHub
+          </ExternalLink>
         </div>
         <div className="flex flex-col space-y-1 text-sm">
           <Link href="/legal/privacy">

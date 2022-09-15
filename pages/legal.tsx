@@ -12,6 +12,15 @@ export default function Legal() {
     <div className="flex flex-col py-2">
       <Head>
         <title>Hikium Legal</title>
+        <meta
+          name="description"
+          content="Important legal documents and information for Hikium projects, products, and services."
+        />
+        <meta name="og:title" content="Hikium Legal" />
+        <meta
+          name="og:description"
+          content="Legal information for Hikium projects, products, and services"
+        />
       </Head>
 
       <div className="flex flex-col space-y-10">

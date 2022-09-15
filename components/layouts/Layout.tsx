@@ -4,6 +4,9 @@ import Link from "next/link";
 // Design
 import { IconExternalLink } from "@tabler/icons";
 
+// First party components
+import BrandWordmark from "components/brand/BrandWordmark";
+
 interface LayoutProps {
   children: React.ReactNode;
   manualMargin: boolean;
@@ -19,7 +22,9 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
     >
       <header className={`${manualMargin && "px-5 lg:px-52"} pt-10 w-fit`}>
         <Link href="/" passHref>
-          <h1 className="text-lg cursor-pointer">Hikium</h1>
+          <div className="w-20 h-4 cursor-pointer">
+            <BrandWordmark />
+          </div>
         </Link>
       </header>
       <main className="flex-1">{children}</main>

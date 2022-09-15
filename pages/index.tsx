@@ -4,53 +4,26 @@ import type { ReactElement } from "react";
 // SEO
 import Head from "next/head";
 
-// Routing
-import Link from "next/link";
-
-// Images
-import Image from "next/image";
-import imageChildCoding from "/public/images/child-code.webp";
-import imageMountain from "/public/images/mountain.webp";
-
 // First party components
-import { ECLogo } from "components/brand/ECLogo";
-
-// Hooks
-import { useInterval } from "hooks/useInterval";
+import ECIcon from "components/brand/ECIcon";
 
 // Layouts
 import Layout from "components/layouts/Layout";
 
-import { useState } from "react";
-import { IconCapture, IconWifiOff } from "@tabler/icons";
-
 export default function Home() {
-  // Dynamic colours
-  const filterNone = "";
-  const filterHueRotate180 = "hue-rotate-180";
-  const filterGreyscale = "grayscale";
-  const filterSepia = "sepia";
-
-  // Change the colour value of the string
-  const [colourFiltersDemoIndex, setColourFiltersDemoIndex] = useState(0);
-  const [colourFiltersDemo, setColourFiltersDemo] = useState(filterNone);
-  const colourFiltersDemoColours = [
-    filterNone,
-    filterHueRotate180,
-    filterGreyscale,
-    filterSepia,
-  ];
-
-  // Every two seconds, go to the next colour
-  useInterval(() => {
-    setColourFiltersDemoIndex((colourFiltersDemoIndex + 1) % 4);
-    setColourFiltersDemo(colourFiltersDemoColours[colourFiltersDemoIndex]);
-  }, 2000);
-
   return (
     <div className="flex flex-col py-2">
       <Head>
         <title>Hikium</title>
+        <meta
+          name="description"
+          content="The element of element of the web. Building the revolutionary Hikium Experience Composer website builder."
+        />
+        <meta name="og:title" content="Hikium" />
+        <meta
+          name="og:description"
+          content="The element of element of the web"
+        />
       </Head>
 
       <div className="flex flex-col space-y-48">
@@ -65,7 +38,7 @@ export default function Home() {
               </h2>
               <div className="hidden md:flex md:items-center md:justify-center ">
                 <div className="w-20 h-20">
-                  <ECLogo />
+                  <ECIcon />
                 </div>
               </div>
               {/* Mobile */}

@@ -8,15 +8,15 @@
   "dependencies": {
     "@fontsource/dosis": "^4.5.9",
     "@fontsource/public-sans": "^4.5.10",
+    "@headlessui/react": "1.7.2",
+    "@heroicons/react": "2.0.11",
     "@tabler/icons": "^1.83.1",
     "framer-motion": "^7.2.0",
     "next": "latest",
     "next-mdx-remote": "^4.1.0",
     "react": "18.1.0",
     "react-device-detect": "^2.2.2",
-    "react-dom": "18.1.0",
-    "@headlessui/react": "1.7.2",
-    "@heroicons/react": "2.0.11"
+    "react-dom": "18.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.35",

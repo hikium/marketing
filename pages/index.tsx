@@ -1,6 +1,8 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import BrandWordmark from "components/brand/BrandWordmark";
+import Link from 'next/link';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -30,12 +32,8 @@ export default function Example() {
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div className="flex w-full items-center justify-between md:w-auto">
                     <a href="#">
-                      <span className="sr-only">Your Company</span>
-                      <img
-                        alt="Your Company"
-                        className="h-8 w-auto sm:h-10"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                      />
+                      <span className="sr-only">Hikium</span>
+                        <BrandWordmark />
                     </a>
                     <div className="-mr-2 flex items-center md:hidden">
                       <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">

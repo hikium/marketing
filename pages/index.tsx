@@ -5,10 +5,8 @@ import BrandWordmark from "components/brand/BrandWordmark";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Contact", href: "#" },
+  { name: "Legal", href: "#" },
 ];
 
 export default function Example() {
@@ -57,12 +55,6 @@ export default function Example() {
                       {item.name}
                     </a>
                   ))}
-                  <a
-                    href="#"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Log in
-                  </a>
                 </div>
               </nav>
             </div>
@@ -100,12 +92,6 @@ export default function Example() {
                       </a>
                     ))}
                   </div>
-                  <a
-                    href="#"
-                    className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
-                  >
-                    Log in
-                  </a>
                 </div>
               </Popover.Panel>
             </Transition>

@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadecolortowhitebrand: {
+          '0%': { transform: 'bg-brand text-white' },
+          '100%': { transform: 'bg-white text-brand' },
+        },
+      },
       colors: {
         brand: "#e9e1b0",
       },
@@ -18,3 +24,4 @@ module.exports = {
   },
   plugins: [],
 };
+

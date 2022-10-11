@@ -11,7 +11,8 @@ import "@fontsource/public-sans/600.css";
 
 // Global providers
 import { MotionConfig, LazyMotion, domAnimation } from "framer-motion";
-import * as ackeeTracker from "ackee-tracker";
+// import { useRouter } from "next/router";
+import { useAckee } from "use-ackee";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactElement;
@@ -29,11 +30,40 @@ export default function Application({
   const getLayout = Component.getLayout ?? ((page) => page);
 
   // Analytics
-  useEffect(() => {
-    ackeeTracker
-      .create("https://ackee.hikium.com")
-      .record("2e846c93-9ead-47d0-b8dc-1e9cc57d2520");
-  });
+  // const router = useRouter();
+  // useEffect(() => {
+  //   const handleRouteChange = (url: any) => {
+  //     useAckee(
+  //       url,
+  //       {
+  //         server: "https://ackee.hikium.com",
+  //         domainId: "2e846c93-9ead-47d0-b8dc-1e9cc57d2520",
+  //       },
+  //       {
+  //         detailed: false,
+  //         ignoreLocalhost: true,
+  //         ignoreOwnVisits: true,
+  //       }
+  //     );
+  //   };
+  //   router.events.on("routeChangeComplete", handleRouteChange);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleRouteChange);
+  //   };
+  // }, [router.events]);
+
+  useAckee(
+    "/",
+    {
+      server: "https://ackee.hikium.com",
+      domainId: "2e846c93-9ead-47d0-b8dc-1e9cc57d2520",
+    },
+    {
+      detailed: false,
+      ignoreLocalhost: true,
+      ignoreOwnVisits: true,
+    }
+  );
 
   return (
     <MotionConfig reducedMotion="user">

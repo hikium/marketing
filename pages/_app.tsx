@@ -1,5 +1,5 @@
 // Types
-import type { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 
@@ -11,6 +11,7 @@ import "@fontsource/public-sans/600.css";
 
 // Global providers
 import { MotionConfig, LazyMotion, domAnimation } from "framer-motion";
+import * as ackeeTracker from "ackee-tracker";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactElement;
@@ -26,6 +27,13 @@ export default function Application({
 }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page);
+
+  // Analytics
+  useEffect(() => {
+    ackeeTracker
+      .create("https://ackee.hikium.com")
+      .record("2e846c93-9ead-47d0-b8dc-1e9cc57d2520");
+  });
 
   return (
     <MotionConfig reducedMotion="user">

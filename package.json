@@ -15,8 +15,7 @@
     "next-mdx-remote": "^4.1.0",
     "react": "18.1.0",
     "react-device-detect": "^2.2.2",
-    "react-dom": "18.1.0",
-    "use-ackee": "^3.0.1"
+    "react-dom": "18.1.0"
   },
   "devDependencies": {
     "@types/ackee-tracker": "^5.0.2",

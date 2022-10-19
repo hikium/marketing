@@ -132,7 +132,7 @@ export default function Home({ children, manualMargin }: LayoutProps) {
 
       <section>
         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl text-center bg-black pt-20">
-          No strings attatched.
+          No strings attached.
         </h1>
         <p className="text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl gap-2 text-center">
           Hikium EC uses advanced website building technologies that don't come
@@ -140,7 +140,7 @@ export default function Home({ children, manualMargin }: LayoutProps) {
           pay-to-use. Simply build your website with Hikium EC and export your
           code to host it anywhere, on any platform. The best part? No sign up
           is required. Simply load up your favourite browser and start creating
-          your own <span className="text-brand">Element of Elagence.</span>
+          your own <span className="text-brand">Element of Elegance.</span>
         </p>
       </section>
 

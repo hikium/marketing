@@ -112,7 +112,7 @@ export default function Layout({
               Responsible Disclosure
             </a>
           </Link>
-          <Link href="#">
+          <Link href="/contact">
             <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
               Contact Hikium
             </a>

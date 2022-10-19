@@ -5,6 +5,7 @@ import BrandWordmark from "components/brand/BrandWordmark";
 import Link from "next/link";
 import ECIcon from "components/brand/ECIcon";
 import Layout from "components/layouts/Layout";
+import Button from "components/system/Button";
 
 const navigation = [
   { name: "Contact", href: "#" },
@@ -113,17 +114,7 @@ export default function Home({ children, manualMargin }: LayoutProps) {
                 <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 flex gap-2 tracking-tight text-center">
                   With Hikium <ECIcon />
                 </p>
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <a
-                      href="#"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-brand text-white px-8 py-3 font-medium transition ease-in-out delay-150 b hover:-translate-y-1 hover:scale-110 hover:bg-white hover:text-brand duration-300 md:text-lg"
-                    >
-                      Get started
-                    </a>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3"></div>
-                </div>
+                <Button isDisabled>Open the EC App</Button>
               </div>
             </main>
           </div>

@@ -6,18 +6,14 @@ import Link from "next/link";
 import ECIcon from "components/brand/ECIcon";
 import Layout from "components/layouts/Layout";
 import Button from "components/system/Button";
+import { IconArrowRight } from "@tabler/icons";
 
 const navigation = [
   { name: "Contact", href: "#" },
   { name: "Legal", href: "/legal" },
 ];
 
-interface LayoutProps {
-  children: React.ReactNode;
-  manualMargin: boolean;
-}
-
-export default function Home({ children, manualMargin }: LayoutProps) {
+export default function Home() {
   return (
     <div className="relative overflow-hidden bg-black">
       <title>Hikium</title>
@@ -114,7 +110,9 @@ export default function Home({ children, manualMargin }: LayoutProps) {
                 <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0 flex gap-2 tracking-tight text-center">
                   With Hikium <ECIcon />
                 </p>
-                <Button isDisabled>Open the EC App</Button>
+                <Button icon={<IconArrowRight />} isDisabled>
+                  Open the EC App
+                </Button>
               </div>
             </main>
           </div>
@@ -144,5 +142,9 @@ export default function Home({ children, manualMargin }: LayoutProps) {
   );
 }
 Home.getLayout = function getLayout(page: ReactElement) {
-  return <Layout manualMargin={true}>{page}</Layout>;
+  return (
+    <Layout manualMargin={true} showOpenECButton={true}>
+      {page}
+    </Layout>
+  );
 };

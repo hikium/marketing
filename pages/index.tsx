@@ -5,13 +5,11 @@ import BrandWordmark from "components/brand/BrandWordmark";
 import Link from "next/link";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Contact", href: "#" },
+  { name: "Legal", href: "#" },
 ];
 
-export default function Example() {
+export default function Homepage() {
   return (
     <div className="relative overflow-hidden bg-black">
       <div className="mx-auto max-w-7xl">
@@ -23,15 +21,12 @@ export default function Example() {
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            <polygon points="50,0 100,0 50,100 0,100" />
+          <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
 
           <Popover>
             <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
-              <nav
-                className="relative flex items-center justify-between sm:h-10 lg:justify-start"
-                aria-label="Global"
-              >
+              <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                   <div className="flex w-full items-center justify-between md:w-auto">
                     <Link href="/" passHref>
@@ -57,12 +52,6 @@ export default function Example() {
                       {item.name}
                     </a>
                   ))}
-                  <a
-                    href="#"
-                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Log in
-                  </a>
                 </div>
               </nav>
             </div>
@@ -83,7 +72,7 @@ export default function Example() {
                 <div className="overflow-hidden rounded-lg bg-black shadow-md ring-1 ring-black ring-opacity-5">
                   <div className="flex items-center justify-between px-5 pt-4">
                     <div className="-mr-2">
-                      <Popover.Button className="inline-flex items-center justify-center rounded-md bg-black p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                      <Popover.Button className="inline-flex items-center justify-center rounded-md bg-black p-2 text-white hover:bg-white-100 hover:text-white -500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Close main menu</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
@@ -100,12 +89,6 @@ export default function Example() {
                       </a>
                     ))}
                   </div>
-                  <a
-                    href="#"
-                    className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
-                  >
-                    Log in
-                  </a>
                 </div>
               </Popover.Panel>
             </Transition>
@@ -119,26 +102,17 @@ export default function Example() {
                 <span className="block xl:inline text-white">to the web.</span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
+                With Hikium Experience Composer, the free, no-account website builder.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <a
                     href="#"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
-                  >
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-brand px-8 py-3 text-base font-medium text-white hover:bg-white hover:text-brand md:py-4 md:px-10 md:text-lg">
                     Get started
                   </a>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a
-                    href="#"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-100 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg"
-                  >
-                    Live demo
-                  </a>
                 </div>
               </div>
             </div>

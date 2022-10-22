@@ -63,7 +63,10 @@ interface PathProps {
 // @ts-ignore
 export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
   // Find Markdown files
-  const filePath = path.join(`public/markdown/legal/oss`, `${params.slug}.mdx`);
+  const filePath = path.join(
+    `public/markdown/legal/opensource`,
+    `${params.slug}.mdx`
+  );
   const source = fs.readFileSync(filePath);
 
   // Use the files to parse MDX
@@ -79,7 +82,10 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
   };
 };
 export const getStaticPaths = async () => {
-  const pageContentPath = path.join(process.cwd(), "public/markdown/legal/oss");
+  const pageContentPath = path.join(
+    process.cwd(),
+    "public/markdown/legal/opensource"
+  );
 
   const pageFilePaths = fs
     .readdirSync(pageContentPath)

@@ -131,12 +131,12 @@ export default function Home() {
               {/* Album cover */}
               <div className="bg-black/25 dark:bg-white/25 h-36 w-36 rounded-2xl" />
               <div className="flex justify-center items-end">
-                <Button icon={<IconBrandSpotify />}>Stream the Album</Button>
+                <Button icon={<IconBrandSpotify />}>Stream the Single</Button>
               </div>
             </div>
             <div className="flex flex-col md:flex-row space-y-2 md:space-x-5 justify-center items-end">
               <SupplementaryText className="flex justify-center items-center text-end">
-                Build your free website now
+                Coming in 2023
               </SupplementaryText>
               <Button icon={<IconArrowRight />} isDisabled>
                 Open the EC App
@@ -161,7 +161,7 @@ export default function Home() {
           </div>
           {/* Replace with Open EC button when launched */}
           <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full flex justify-center items-center text-sm font-display uppercase">
-            Coming Soon
+            Coming in 2023
           </span>
         </section>
         <section className="flex flex-col space-y-0 mx-5 lg:mx-52 text-sm text-gray-600 dark:text-gray-400 lg:w-1/3">

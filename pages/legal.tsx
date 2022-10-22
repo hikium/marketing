@@ -67,7 +67,7 @@ export default function Legal() {
                 <Button>Hikium Experience Composer Terms of Usage</Button>
               </Link>
               <Link href="/legal/terms/website" passHref>
-                <Button>Hikium Website Terms of Usage</Button>
+                <Button>Hikium Marketing Website Terms of Usage</Button>
               </Link>
             </div>
           </section>

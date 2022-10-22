@@ -1,6 +1,7 @@
 // First party components
 import LoadingBar from "./LoadingBar";
 
+// Third party design
 import { m } from "framer-motion";
 
 interface ButtonProps {
@@ -13,6 +14,7 @@ interface ButtonProps {
   isDisabled?: boolean;
   href?: string;
   openInNewTab?: boolean;
+  className?: string;
 }
 
 /**
@@ -32,18 +34,27 @@ export default function Button({
   isDisabled,
   href,
   openInNewTab,
+  className,
 }: ButtonProps) {
+  // Check for dark mode
+  // Do not know how to implement!
+  // const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+
   return (
     <>
       {!children ? (
         <m.button
-          className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-full ${
+          className={`${
+            isActive
+              ? "bg-gray-800/10 dark:bg-white/10"
+              : "bg-gray-800/5 dark:bg-white/5"
+          } p-3 rounded-full ${
             isLoading
               ? "shadow-inner"
               : isActive
-              ? "shadow-sm z-10"
+              ? "shadow-md z-10"
               : "shadow-inner"
-          } w-full`}
+          } w-full ${className}`}
           style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
           onClick={onClick}
           whileHover={{
@@ -57,14 +68,14 @@ export default function Button({
         <>
           {isDisabled ? (
             <m.button
-              className="bg-gray-800/5 dark:bg-white/5 p-3 rounded-lg text-gray-400 dark:shadow-gray-800 shadow-none w-full"
+              className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-lg text-gray-400 dark:shadow-gray-800 shadow-none w-full ${className}`}
               style={{ cursor: "not-allowed" }}
               disabled={true}
               aria-disabled={true}
             >
               <div className="flex flex-row space-x-2 items-center">
                 <div className="flex-none">{icon}</div>
-                <div className="flex-1">{children}</div>
+                <div className="flex-1 px-2">{children}</div>
                 <div />
               </div>
             </m.button>
@@ -72,13 +83,17 @@ export default function Button({
             <>
               {href ? (
                 <m.a
-                  className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-lg ${
+                  className={`${
+                    isActive
+                      ? "bg-gray-800/10 dark:bg-white/10"
+                      : "bg-gray-800/5 dark:bg-white/5"
+                  } p-3 rounded-lg ${
                     isLoading
                       ? "shadow-inner"
                       : isActive
-                      ? "shadow-sm z-10"
+                      ? "shadow-md z-10"
                       : "shadow-inner"
-                  }`}
+                  } ${className}`}
                   style={{
                     cursor: isLoading ? "not-allowed" : "pointer",
                     textDecoration: "none",
@@ -96,7 +111,7 @@ export default function Button({
                     // left side of the button
                     <div className="flex flex-row space-x-2 items-center">
                       <div className="flex-none">{icon}</div>
-                      <div className="flex-1">
+                      <div className="flex-1 px-2">
                         {isLoading ? (
                           <div className="flex justify-center">
                             <LoadingBar />
@@ -117,13 +132,17 @@ export default function Button({
                 </m.a>
               ) : (
                 <m.button
-                  className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-lg ${
+                  className={`${
+                    isActive
+                      ? "bg-white/10 dark:bg-white/10"
+                      : "bg-gray-800/5 dark:bg-white/5"
+                  } p-3 rounded-lg ${
                     isLoading
                       ? "shadow-inner"
                       : isActive
-                      ? "shadow-sm z-10"
+                      ? "shadow-md z-10"
                       : "shadow-inner"
-                  } w-full`}
+                  } w-full ${className}`}
                   style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
                   onClick={onClick}
                   whileHover={{
@@ -136,7 +155,7 @@ export default function Button({
                     // left side of the button
                     <div className="flex flex-row space-x-2 items-center">
                       <div className="flex-none">{icon}</div>
-                      <div className="flex-1">
+                      <div className="flex-1 px-2">
                         {isLoading ? (
                           <div className="flex justify-center">
                             <LoadingBar />

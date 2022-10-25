@@ -51,7 +51,7 @@ export default function Layout({
 
   return (
     <div
-      className={`flex flex-col space-y-20 ${
+      className={`flex flex-col space-y-4 ${
         !manualMargin && "px-5 lg:px-52"
       } min-h-screen`}
     >
@@ -60,7 +60,7 @@ export default function Layout({
           manualMargin && "px-5 lg:px-52"
         } pt-10 flex flex-row justify-between`}
       >
-        <BrandWordmark />
+        <div className="h-[15%] w-[15%] mt-2"><BrandWordmark /></div>
         {showOpenECButton && (
           <div className="w-fit">
             <Button icon={<IconArrowRight />} isDisabled>

@@ -60,11 +60,7 @@ export default function Layout({
           manualMargin && "px-5 lg:px-52"
         } pt-10 flex flex-row justify-between`}
       >
-        <Link href="/" passHref>
-          <div className="w-20 h-4 cursor-pointer">
-            <BrandWordmark />
-          </div>
-        </Link>
+        <BrandWordmark />
         {showOpenECButton && (
           <div className="w-fit">
             <Button icon={<IconArrowRight />} isDisabled>

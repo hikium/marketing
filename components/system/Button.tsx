@@ -36,23 +36,47 @@ export default function Button({
   return (
     <>
       {!children ? (
-        <m.button
-          className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-full ${
-            isLoading
-              ? "shadow-inner"
-              : isActive
-              ? "shadow-sm z-10"
-              : "shadow-inner"
-          } w-full`}
-          style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
-          onClick={onClick}
-          whileHover={{
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-          }}
-          whileTap={{ scale: 0.98 }}
-        >
-          {icon ? <div className="flex justify-center">{icon}</div> : ""}
-        </m.button>
+        <>
+          {href ? (
+            <m.a
+              className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-full ${
+                isLoading
+                  ? "shadow-inner"
+                  : isActive
+                  ? "shadow-sm z-10"
+                  : "shadow-inner"
+              } w-full`}
+              style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
+              onClick={onClick}
+              whileHover={{
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              href={href}
+              target={(openInNewTab && "_blank") || undefined}
+            >
+              {icon ? <div className="flex justify-center">{icon}</div> : ""}
+            </m.a>
+          ) : (
+            <m.button
+              className={`bg-gray-800/5 dark:bg-white/5 p-3 rounded-full ${
+                isLoading
+                  ? "shadow-inner"
+                  : isActive
+                  ? "shadow-sm z-10"
+                  : "shadow-inner"
+              } w-full`}
+              style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
+              onClick={onClick}
+              whileHover={{
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {icon ? <div className="flex justify-center">{icon}</div> : ""}
+            </m.button>
+          )}
+        </>
       ) : (
         <>
           {isDisabled ? (

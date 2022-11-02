@@ -23,6 +23,8 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
           <div className="w-20 h-4 cursor-pointer">
             <BrandWordmark />
           </div>
+
+          
         </Link>
       </nav>
       <div className="flex-1">{children}</div>

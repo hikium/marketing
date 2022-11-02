@@ -76,7 +76,6 @@ export default function MPage() {
       </Head>
 
       <main className="flex flex-col space-y-48">
-        {/* Headline marketing - our brand collaborations */}
         <section
           className="flex flex-col justify-between"
           style={{

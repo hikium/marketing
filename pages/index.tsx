@@ -164,7 +164,7 @@ export default function Home() {
           <h1 className="text-center text6xl">Hikium <span className="text-vblue">V</span></h1>
           <p className="text-center">Powering Culture</p>
           <div className="w-[40%] ml-auto mr-auto mt-[2%]">
-            <Link href="/m">
+            <Link href="/v">
               <Button icon={<IconArrowRight />}>
                   Learn More
               </Button>

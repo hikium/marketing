@@ -128,12 +128,12 @@ export default function MPage() {
             </m.div>
           </div>
         </section>
-        <section className="">
-          <p className="text-xl w-1/3 ml-auto mr-auto">
+        <section className="flex flex-col space-y-10">
+          <p className="text-xl w-1/3">
             At Hikium, we're committed to building tomorrow's technologies
-            today. We're making them open-source, free and priceless for all.
+            today. We're taking them open-source, free and priceless for all.
           </p>
-          <p className="text-xl w-1/3 ml-auto mr-auto">They are the Hikium M Initiatives.</p>
+          <p className="text-xl w-1/3">They are the Hikium M Initiatives.</p>
         </section>
         <InitiativeDetails>
           <div className="flex flex-col space-y-2">

@@ -33,9 +33,9 @@ export default function Legal() {
         />
       </Head>
 
-      <div className="flex flex-col space-y-10">
-        <header>
-          <Card className="h-80 bg-gradient-to-br from-brand/10 to-brand dark:to-brand/30 flex flex-col justify-between">
+      <div className="flex flex-col space-y-20">
+        {/* <header>
+          <Card className="h-80 flex flex-col justify-between">
             <div className="flex flex-col space-y-5">
               <h1>Hikium Legal</h1>
               <p className="w-1/3">
@@ -44,22 +44,40 @@ export default function Legal() {
               </p>
             </div>
             <div className="flex justify-end">
-              <IconGavel width={96} height={96} />
+              <div className="flex p-5 bg-brand rounded-3xl">
+                <IconGavel width={96} height={96} />
+              </div>
             </div>
           </Card>
+        </header> */}
+        <header
+          className="flex flex-col justify-between"
+          style={{
+            height: "75vh",
+          }}
+        >
+          <div />
+          <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-8 justify-center align-center">
+            <div className="flex p-5 bg-brand rounded-3xl">
+              <IconGavel width={64} height={64} />
+            </div>
+            <h1 style={{ fontSize: "4em" }}>Hikium Legal</h1>
+          </div>
+          <div className="flex flex-col space-y-5 md:flex-row md:justify-between md:space-y-0">
+            <aside className="flex">
+              <Card className="w-1/2 flex flex-col space-y-5">
+                <p>
+                  At Hikium, we only collect the data we need, and we protect
+                  your data every step of the way.
+                </p>
+                <Link href="/legal/privacy" passHref>
+                  <Button>Read our Privacy Statement</Button>
+                </Link>
+              </Card>
+            </aside>
+          </div>
         </header>
         <main className="flex flex-col space-y-10">
-          <section>
-            <Card className="w-1/3 flex flex-col space-y-5">
-              <p>
-                At Hikium, we only collect the data we need, and we protect what
-                we collect every step of the way.
-              </p>
-              <Link href="/legal/privacy" passHref>
-                <Button>Read our Privacy Statement</Button>
-              </Link>
-            </Card>
-          </section>
           <section className="flex flex-col space-y-5">
             <h2 className="text-2xl">Terms</h2>
             <div className="flex flex-col space-y-2">

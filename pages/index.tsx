@@ -20,6 +20,7 @@ import SupplementaryText from "components/system/SupplementaryText";
 import { useState, Suspense } from "react";
 import { useInterval } from "hooks/useInterval";
 import Link from "next/link";
+import MInitiativesIcon from "components/brand/MInitiativesIcon";
 
 export default function Home() {
   // Brand collaboration card animation
@@ -75,7 +76,7 @@ export default function Home() {
               >
                 The new Hikium EC
               </h2>
-              </div>
+            </div>
             <div className="flex flex-row md:space-x-5">
               <h2
                 style={{ fontSize: "5.5em" }}
@@ -148,9 +149,35 @@ export default function Home() {
         </section>
 
         {/* Product marketing will go here */}
+        <section className="flex flex-col space-y-5 mx-5 lg:mx-52">
+          <div className="flex flex-row md:space-x-5 justify-center">
+            <h2 className="leading-none hidden md:flex text-4xl">Hikium</h2>
+            <div className="hidden md:flex md:items-center md:justify-center">
+              <div className="w-10 h-10">
+                <MInitiativesIcon />
+              </div>
+            </div>
+            <h2 className="leading-none hidden md:flex text-4xl">
+              Initiatives
+            </h2>
+            {/* Mobile */}
+            <h2 style={{ fontSize: "2em" }} className="leading-none md:hidden">
+              Hikium M Initiatives
+            </h2>
+          </div>
+          <p className="text-center">M for metaverse. M for tomorrow.</p>
+          <Link href="/m" passHref>
+            <Button icon={<IconArrowRight />}>
+              Discover open-source at Hikium
+            </Button>
+          </Link>
+        </section>
+
         <section>
-          <h1 className="text-center text6xl">Hikium <span className="text-mpink">M</span></h1>
-          <p className="text-center">Open source technologies</p>
+          <h1 className="text-center text6xl">
+            Hikium <span className="text-vblue">V</span>
+          </h1>
+          <p className="text-center">Powering Culture</p>
           <div className="w-[40%] ml-auto mr-auto mt-[2%]">
             <Link href="/m">
               <Button icon={<IconArrowRight />}>
@@ -160,19 +187,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
-          <h1 className="text-center text6xl">Hikium <span className="text-vblue">V</span></h1>
-          <p className="text-center">Powering Culture</p>
-          <div className="w-[40%] ml-auto mr-auto mt-[2%]">
-            <Link href="/v">
-              <Button icon={<IconArrowRight />}>
-                  Learn More
-              </Button>
-            </Link>
-          </div>
-        </section>
-
-        
         {/* End of page call-to-action */}
         <section className="flex flex-row justify-between mx-5 lg:mx-52">
           <div className="flex flex-row space-x-5 justify-center items-center">

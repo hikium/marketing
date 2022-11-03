@@ -12,6 +12,7 @@ import { m, Variants } from "framer-motion";
 
 // Layouts
 import Layout from "components/layouts/Layout";
+import MInitiativesIcon from "components/brand/MInitiativesIcon";
 
 export default function MPage() {
   // Animations
@@ -76,7 +77,6 @@ export default function MPage() {
       </Head>
 
       <main className="flex flex-col space-y-48">
-        {/* Headline marketing - our brand collaborations */}
         <section
           className="flex flex-col justify-between"
           style={{
@@ -94,16 +94,17 @@ export default function MPage() {
             >
               Hikium
             </m.h1>
-            <m.span
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0 }}
-              transition={{ duration: 0.3 }}
-              style={{ backgroundColor: "#8a679c" }}
-              className="flex px-8 py-1 rounded-3xl text-white w-fit"
-            >
-              <h1 style={{ fontSize: "4em" }}>M</h1>
-            </m.span>
+            <span className="flex justify-center items-center">
+              <m.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{ duration: 0.3 }}
+                className="w-20 h-20"
+              >
+                <MInitiativesIcon />
+              </m.span>
+            </span>
             <m.h1
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}

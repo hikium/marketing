@@ -173,20 +173,6 @@ export default function Home() {
           </Link>
         </section>
 
-        <section>
-          <h1 className="text-center text6xl">
-            Hikium <span className="text-vblue">V</span>
-          </h1>
-          <p className="text-center">Powering Culture</p>
-          <div className="w-[40%] ml-auto mr-auto mt-[2%]">
-            <Link href="/m">
-              <Button icon={<IconArrowRight />}>
-                  Learn More
-              </Button>
-            </Link>
-          </div>
-        </section>
-
         {/* End of page call-to-action */}
         <section className="flex flex-row justify-between mx-5 lg:mx-52">
           <div className="flex flex-row space-x-5 justify-center items-center">

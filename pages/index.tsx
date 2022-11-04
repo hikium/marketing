@@ -180,7 +180,9 @@ export default function Home() {
           <p className="text-center">Powering Culture</p>
           <div className="w-[40%] ml-auto mr-auto mt-[2%]">
             <Link href="/m">
-              <Button icon={<IconArrowRight />}>Learn More</Button>
+              <Button icon={<IconArrowRight />}>
+                  Learn More
+              </Button>
             </Link>
           </div>
         </section>

@@ -12,7 +12,6 @@ import { m, Variants } from "framer-motion";
 
 // Layouts
 import Layout from "components/layouts/Layout";
-import MInitiativesIcon from "components/brand/MInitiativesIcon";
 
 export default function MPage() {
   // Animations
@@ -77,6 +76,7 @@ export default function MPage() {
       </Head>
 
       <main className="flex flex-col space-y-48">
+        {/* Headline marketing - our brand collaborations */}
         <section
           className="flex flex-col justify-between"
           style={{
@@ -94,17 +94,16 @@ export default function MPage() {
             >
               Hikium
             </m.h1>
-            <span className="flex justify-center items-center">
-              <m.span
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
-                transition={{ duration: 0.3 }}
-                className="w-20 h-20"
-              >
-                <MInitiativesIcon />
-              </m.span>
-            </span>
+            <m.span
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0 }}
+              transition={{ duration: 0.3 }}
+              style={{ backgroundColor: "#8a679c" }}
+              className="flex px-8 py-1 rounded-3xl text-white w-fit"
+            >
+              <h1 style={{ fontSize: "4em" }}>M</h1>
+            </m.span>
             <m.h1
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -129,12 +128,12 @@ export default function MPage() {
             </m.div>
           </div>
         </section>
-        <section className="">
-          <p className="text-xl w-1/3 ml-auto mr-auto">
+        <section className="flex flex-col space-y-10">
+          <p className="text-xl w-1/3">
             At Hikium, we're committed to building tomorrow's technologies
-            today. We're making them open-source, free and priceless for all.
+            today. We're taking them open-source, free and priceless for all.
           </p>
-          <p className="text-xl w-1/3 ml-auto mr-auto">They are the Hikium M Initiatives.</p>
+          <p className="text-xl w-1/3">They are the Hikium M Initiatives.</p>
         </section>
         <InitiativeDetails>
           <div className="flex flex-col space-y-2">

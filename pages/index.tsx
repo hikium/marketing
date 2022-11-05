@@ -148,6 +148,23 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Overview animation - TBC */}
+
+        {/* Easy to use section */}
+        <section></section>
+
+        {/* Code export */}
+        <section></section>
+
+        {/* No account */}
+        <section></section>
+
+        {/* Free */}
+        <section></section>
+
+        {/* Responsive design */}
+        <section></section>
+
         {/* Product marketing will go here */}
         <section className="flex flex-col space-y-5 mx-5 lg:mx-52">
           <div className="flex flex-row md:space-x-5 justify-center">

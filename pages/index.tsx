@@ -149,6 +149,35 @@ export default function Home() {
         </section>
 
         {/* Product marketing will go here */}
+        
+
+        <section className="flex flex-col space-y-5 mx-5 lg:mx-52">
+          
+        </section>
+
+        {/* End of page call-to-action */}
+        <section className="flex flex-row justify-between mx-5 lg:mx-52">
+          <div className="flex flex-row space-x-5 justify-center items-center">
+            <div className="flex justify-center items-center">
+              <div className="w-6 h-6">
+                <ECIcon />
+              </div>
+            </div>
+            <div className="flex justify-center items-center">
+              <p>Hikium Experience Composer website builder</p>
+            </div>
+          </div>
+          {/* Replace with Open EC button when launched */}
+          <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full flex justify-center items-center text-sm font-display uppercase">
+            Coming in 2023
+          </span>
+        </section>
+        <section className="flex flex-col space-y-0 mx-5 lg:mx-52 text-sm text-gray-600 dark:text-gray-400 lg:w-1/3">
+          <p>Early development version. Features may change before release.</p>
+        </section>
+
+        {/* M Marketing*/}
+
         <section className="flex flex-col space-y-5 mx-5 lg:mx-52">
           <div className="flex flex-row md:space-x-5 justify-center">
             <h2 className="leading-none hidden md:flex text-4xl">Hikium</h2>
@@ -171,27 +200,6 @@ export default function Home() {
               Discover open-source at Hikium
             </Button>
           </Link>
-        </section>
-
-        {/* End of page call-to-action */}
-        <section className="flex flex-row justify-between mx-5 lg:mx-52">
-          <div className="flex flex-row space-x-5 justify-center items-center">
-            <div className="flex justify-center items-center">
-              <div className="w-6 h-6">
-                <ECIcon />
-              </div>
-            </div>
-            <div className="flex justify-center items-center">
-              <p>Hikium Experience Composer website builder</p>
-            </div>
-          </div>
-          {/* Replace with Open EC button when launched */}
-          <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full flex justify-center items-center text-sm font-display uppercase">
-            Coming in 2023
-          </span>
-        </section>
-        <section className="flex flex-col space-y-0 mx-5 lg:mx-52 text-sm text-gray-600 dark:text-gray-400 lg:w-1/3">
-          <p>Early development version. Features may change before release.</p>
         </section>
       </main>
     </>

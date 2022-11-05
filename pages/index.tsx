@@ -148,6 +148,23 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Overview animation - TBC */}
+
+        {/* Easy to use section */}
+        <section></section>
+
+        {/* Code export */}
+        <section></section>
+
+        {/* No account */}
+        <section></section>
+
+        {/* Free */}
+        <section></section>
+
+        {/* Responsive design */}
+        <section></section>
+
         {/* Product marketing will go here */}
         
 

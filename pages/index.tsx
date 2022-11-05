@@ -149,24 +149,48 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Overview animation - TBC */}
-
-        {/* Easy to use section */}
+        {/* Homepage Video */}
         <section>
-          <Heading as="h2">Test</Heading>
+          
+        </section>
+        {/* Easy to use section */}
+        <section className="mx-5 lg:mx-52">
+          <Heading as="h2" className="">Simple. Easy. Quick.</Heading>
+          <p className="pt-6">Extraordinarily easy to use. Powered by Hikium Drag Drop Code and Responsive Design Technologies,</p>
+          <p>creating an element of elegance for the web has never been this easy.</p>
         </section>
 
         {/* Code export */}
-        <section></section>
+        <section className="mx-5 lg:mx-52">
+          <Heading as="h2" className="">Code Export. Revolutionary.</Heading>
+            <p className="pt-6">Your code is yours. Forever. Powered in-house Hikium Technologies, take your code anywhere and host it whereever, </p>
+            <p>however you like. Hikium EC is the first website development platform that allows you to have full control over what you build. </p>
+            <p>Export your code to three different files, with modern and conteporary 5th generation website content code, and logic code </p>
+            <p>compatiple with the ESMAScript 2022 international standard.</p>
+        </section>
 
         {/* No account */}
-        <section></section>
+        <section className="mx-5 lg:mx-52"> 
+            <Heading as="h2" className="">Hikium EC minds it's own business. Not yours.</Heading>
+            <p className="pt-6">Access the full potential of Hikium EC's creative limits, all without leaking your data. How can we promise that?</p>
+            <p> Because we don't have your data in the first place. Hikium EC is the first website builder on the planet to offer a full suite of</p>
+            <p>Website creation tools, without any sign up required. Even your website data dosen't leave your device. With Hikium Storage Transfer,</p>
+            <p>not one byte of your website leaves your device. It's yours, and your's alone.</p>
+        </section>
 
         {/* Free */}
-        <section></section>
+        <section className="mx-5 lg:mx-52">
+          <Heading as="h2" className="">Free and Priceless.</Heading>
+          <p className="pt-6">As well as not requiring a sign-in, Hikium EC is completely open source, just like all of our other Revolutionary technologies.</p>
+          <p>Access the power of Hikium EC without paying a single sent.</p>
+        </section>
 
         {/* Responsive design */}
-        <section></section>
+        <section className="mx-5 lg:mx-52">
+          <Heading as="h2" className="">Three unique breakpoints. One technology.</Heading>
+          <p className="pt-6">With Hikium Resposive Design, building websites that look amazing on all devices is no longer a struggle. Simply select your breakpoint and design</p>
+          <p> according to the screen size. And the best part? Resposive Design is completely open-source and avalible to everyone, everywhere.</p>
+        </section>
 
         {/* Product marketing will go here */}
 

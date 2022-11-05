@@ -153,9 +153,7 @@ export default function Home() {
 
         {/* Easy to use section */}
         <section>
-          <Heading as="h2" className="text-red-400">
-            Test
-          </Heading>
+          <Heading as="h2">Test</Heading>
         </section>
 
         {/* Code export */}

@@ -21,7 +21,7 @@ import { useState, Suspense } from "react";
 import { useInterval } from "hooks/useInterval";
 import Link from "next/link";
 import MInitiativesIcon from "components/brand/MInitiativesIcon";
-import Heading from "components/system/Heading";
+import Heading from "components/system/Heading"
 
 export default function Home() {
   // Brand collaboration card animation
@@ -152,12 +152,13 @@ export default function Home() {
         {/* Overview animation - TBC */}
 
         {/* Easy to use section */}
-        <section>
-          <Heading as="h2">Test</Heading>
-        </section>
+        <section></section>
 
         {/* Code export */}
-        <section></section>
+        <section>
+            <Heading as={"h1"}> Test </Heading>
+
+        </section>
 
         {/* No account */}
         <section></section>
@@ -169,8 +170,11 @@ export default function Home() {
         <section></section>
 
         {/* Product marketing will go here */}
+        
 
-        <section className="flex flex-col space-y-5 mx-5 lg:mx-52"></section>
+        <section className="flex flex-col space-y-5 mx-5 lg:mx-52">
+          
+        </section>
 
         {/* End of page call-to-action */}
         <section className="flex flex-row justify-between mx-5 lg:mx-52">

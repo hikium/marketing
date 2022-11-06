@@ -150,75 +150,100 @@ export default function Home() {
         </section>
 
         {/* Homepage Video */}
-        <section>
-          
-        </section>
+        <section></section>
         {/* Easy to use section */}
         <section className="mx-5 lg:mx-52">
-          <Heading as="h2" className="">Simple. Easy. Quick.</Heading>
-          <p className="pt-6">Extraordinarily easy to use. Powered by Hikium Drag Drop Code and Responsive Design Technologies,</p>
-          <p>creating an element of elegance for the web has never been this easy.</p>
+          <Heading as="h2" className="">
+            Simple. Easy. Quick.
+          </Heading>
+          <p className="pt-6">
+            Extraordinarily easy to use. Powered by Hikium Drag Drop Code and
+            Responsive Design Technologies,
+          </p>
+          <p>
+            creating an element of elegance for the web has never been this
+            easy.
+          </p>
         </section>
 
         {/* Code export */}
         <section className="mx-5 lg:mx-52">
-          <Heading as="h2" className="">Code Export. Revolutionary.</Heading>
-            <p className="pt-6">Your code is yours. Forever. Powered in-house Hikium Technologies, take your code anywhere and host it whereever, </p>
-            <p>however you like. Hikium EC is the first website development platform that allows you to have full control over what you build. </p>
-            <p>Export your code to three different files, with modern and conteporary 5th generation website content code, and logic code </p>
-            <p>compatiple with the ESMAScript 2022 international standard.</p>
+          <Heading as="h2" className="">
+            Code Export. Revolutionary.
+          </Heading>
+          <p className="pt-6">
+            Your code is yours. Forever. Powered in-house Hikium Technologies,
+            take your code anywhere and host it wherever,{" "}
+          </p>
+          <p>
+            however you like. Hikium EC is the first website development
+            platform that allows you to have full control over what you build.{" "}
+          </p>
+          <p>
+            Export your code to three different files, with modern and
+            contemporary 5th generation website content code, and logic code{" "}
+          </p>
+          <p>
+            compatible with the ECMAScript 2022 international standard
+            <sup>1</sup>.
+          </p>
         </section>
 
         {/* No account */}
-        <section className="mx-5 lg:mx-52"> 
-            <Heading as="h2" className="">Hikium EC minds it's own business. Not yours.</Heading>
-            <p className="pt-6">Access the full potential of Hikium EC's creative limits, all without leaking your data. How can we promise that?</p>
-            <p> Because we don't have your data in the first place. Hikium EC is the first website builder on the planet to offer a full suite of</p>
-            <p>Website creation tools, without any sign up required. Even your website data dosen't leave your device. With Hikium Storage Transfer,</p>
-            <p>not one byte of your website leaves your device. It's yours, and your's alone.</p>
+        <section className="mx-5 lg:mx-52">
+          <Heading as="h2" className="">
+            Hikium EC minds it's own business. Not yours.
+          </Heading>
+          <p className="pt-6">
+            Access the full potential of Hikium EC's creative limits, all
+            without leaking your data. How can we promise that?
+          </p>
+          <p>
+            {" "}
+            Because we don't have your data in the first place. Hikium EC is the
+            first website builder on the planet to offer a full suite of
+          </p>
+          <p>
+            Website creation tools, without any sign up required. Even your
+            website data doesn't leave your device. With Hikium Storage
+            Transfer,
+          </p>
+          <p>
+            not one byte of your website leaves your device. It's yours, and
+            your's alone.
+          </p>
         </section>
 
         {/* Free */}
         <section className="mx-5 lg:mx-52">
-          <Heading as="h2" className="">Free and Priceless.</Heading>
-          <p className="pt-6">As well as not requiring a sign-in, Hikium EC is completely open source, just like all of our other Revolutionary technologies.</p>
-          <p>Access the power of Hikium EC without paying a single sent.</p>
+          <Heading as="h2" className="">
+            Free and Priceless.
+          </Heading>
+          <p className="pt-6">
+            As well as not requiring a sign-in, Hikium EC is completely open
+            source, just like all of our other Revolutionary technologies.
+          </p>
+          <p>Access the power of Hikium EC without paying a single cent.</p>
         </section>
 
         {/* Responsive design */}
         <section className="mx-5 lg:mx-52">
-          <Heading as="h2" className="">Three unique breakpoints. One technology.</Heading>
-          <p className="pt-6">With Hikium Resposive Design, building websites that look amazing on all devices is no longer a struggle. Simply select your breakpoint and design</p>
-          <p> according to the screen size. And the best part? Resposive Design is completely open-source and avalible to everyone, everywhere.</p>
+          <Heading as="h2" className="">
+            Three unique breakpoints. One technology.
+          </Heading>
+          <p className="pt-6">
+            With Hikium Responsive Design, building websites that look amazing
+            on all devices is no longer a struggle. Simply select your
+            breakpoint and design
+          </p>
+          <p>
+            {" "}
+            according to the screen size. And the best part? Responsive Design
+            is completely open-source and available to everyone, everywhere.
+          </p>
         </section>
 
-        {/* Product marketing will go here */}
-
-        <section className="flex flex-col space-y-5 mx-5 lg:mx-52"></section>
-
-        {/* End of page call-to-action */}
-        <section className="flex flex-row justify-between mx-5 lg:mx-52">
-          <div className="flex flex-row space-x-5 justify-center items-center">
-            <div className="flex justify-center items-center">
-              <div className="w-6 h-6">
-                <ECIcon />
-              </div>
-            </div>
-            <div className="flex justify-center items-center">
-              <p>Hikium Experience Composer website builder</p>
-            </div>
-          </div>
-          {/* Replace with Open EC button when launched */}
-          <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full flex justify-center items-center text-sm font-display uppercase">
-            Coming in 2023
-          </span>
-        </section>
-        <section className="flex flex-col space-y-0 mx-5 lg:mx-52 text-sm text-gray-600 dark:text-gray-400 lg:w-1/3">
-          <p>Early development version. Features may change before release.</p>
-        </section>
-
-        {/* M Marketing*/}
-
+        {/* M Marketing */}
         <section className="flex flex-col space-y-5 mx-5 lg:mx-52">
           <div className="flex flex-row md:space-x-5 justify-center">
             <h2 className="leading-none hidden md:flex text-4xl">Hikium</h2>
@@ -241,6 +266,39 @@ export default function Home() {
               Discover open-source at Hikium
             </Button>
           </Link>
+        </section>
+
+        {/* End of page call-to-action */}
+        <section className="flex flex-row justify-between mx-5 lg:mx-52">
+          <div className="flex flex-row space-x-5 justify-center items-center">
+            <div className="flex justify-center items-center">
+              <div className="w-6 h-6">
+                <ECIcon />
+              </div>
+            </div>
+            <div className="flex justify-center items-center">
+              <p>Hikium Experience Composer website builder</p>
+            </div>
+          </div>
+          {/* Replace with Open EC button when launched */}
+          <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full flex justify-center items-center text-sm font-display uppercase">
+            Coming in 2023
+          </span>
+        </section>
+
+        {/* Disclaimers */}
+        <section className="flex flex-col space-y-0 mx-5 lg:mx-52 lg:w-1/3">
+          <SupplementaryText>
+            Early development version. Features may change before release.
+          </SupplementaryText>
+          <SupplementaryText>
+            <ol className="list list-decimal pl-5">
+              <li>
+                Compatible with ECMA-262, 13th edition, June 2022. ECMAScript®
+                is a registered trademark of Ecma International.
+              </li>
+            </ol>
+          </SupplementaryText>
         </section>
       </main>
     </>

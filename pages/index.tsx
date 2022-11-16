@@ -7,19 +7,34 @@ import Head from "next/head";
 // Routing
 import Link from "next/link";
 
-// First party components
-import ECIcon from "components/brand/ECIcon";
-import MInitiativesIcon from "components/brand/MInitiativesIcon";
+// Layouts
+import Layout from "components/layouts/Layout";
+
+// First party design
 import Button from "components/system/Button";
 import SupplementaryText from "components/system/SupplementaryText";
 import Heading from "components/system/Heading";
 
-// Design
-import { IconArrowRight, IconBrandSpotify } from "@tabler/icons";
+// Third party design
+import {
+  IconArrowRight,
+  IconBrandSpotify,
+  IconCapture,
+  IconLock,
+  IconWifiOff,
+} from "@tabler/icons";
 import { m, Variants } from "framer-motion";
 
-// Layouts
-import Layout from "components/layouts/Layout";
+// First party components
+import ECIcon from "components/brand/ECIcon";
+import MInitiativesIcon from "components/brand/MInitiativesIcon";
+
+// Images
+import Image from "next/image";
+import imageChildThinking from "/public/images/child-canvas.webp";
+import imageChildCoding from "/public/images/child-code.webp";
+import imageCity from "/public/images/city.webp";
+import imageMountain from "/public/images/mountain.webp";
 
 import { useState, Suspense } from "react";
 import { useInterval } from "hooks/useInterval";
@@ -42,10 +57,32 @@ export default function Home() {
         type: "spring",
         bounce: 0.2,
         duration: 0.8,
-        delay: 0.1,
+        // delay: 0.05,
       },
     },
   };
+
+  // Dynamic colours
+  const filterNone = "";
+  const filterHueRotate180 = "hue-rotate-180";
+  const filterGreyscale = "grayscale";
+  const filterSepia = "sepia";
+
+  // Change the colour value of the string
+  const [colourFiltersDemoIndex, setColourFiltersDemoIndex] = useState(0);
+  const [colourFiltersDemo, setColourFiltersDemo] = useState(filterNone);
+  const colourFiltersDemoColours = [
+    filterNone,
+    filterHueRotate180,
+    filterGreyscale,
+    filterSepia,
+  ];
+
+  // Every two seconds, go to the next colour
+  useInterval(() => {
+    setColourFiltersDemoIndex((colourFiltersDemoIndex + 1) % 4);
+    setColourFiltersDemo(colourFiltersDemoColours[colourFiltersDemoIndex]);
+  }, 2000);
 
   return (
     <>
@@ -170,110 +207,235 @@ export default function Home() {
         {/* <section></section> */}
 
         {/* Easy to use section */}
-        <section className="flex flex-col space-y-5 md:flex-row md:space-x-10 md:space-y-0 mx-5 lg:mx-52">
-          <Heading as="h2" className="w-1/3">
-            Fast. Easy. Simple.
-          </Heading>
-          <div className="flex flex-col space-y-5">
-            <p>Extraordinarily easy to use.</p>
-            <p>
-              Powered by Hikium Drag+Drop Code and Responsive Design
-              Technologies, creating an element of elegance for the web has
-              never been this easy.
-            </p>
-          </div>
-        </section>
-
-        {/* Code export */}
-        <m.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
+        <section
+          className="flex justify-between px-52"
+          style={{
+            borderTopLeftRadius: "2em",
+            borderTopRightRadius: "2em",
+            borderBottomLeftRadius: "2em",
+            borderBottomRightRadius: "2em",
+          }}
         >
-          <m.section
-            variants={cardVariants}
-            className="flex flex-col space-y-20 shadow-sm bg-black text-white p-20 mx-5"
+          <Image
+            src={imageChildThinking}
+            priority
+            alt="Child looking off to the side, thinking deeply"
+            layout="fixed"
+            width={500}
+            height={800}
             style={{
               borderTopLeftRadius: "2em",
               borderTopRightRadius: "2em",
               borderBottomLeftRadius: "2em",
               borderBottomRightRadius: "2em",
             }}
-          >
+          />
+          <div className="flex items-end">
             <div className="flex flex-col space-y-5">
-              <Heading as="h2" className="">
-                Portability.
-              </Heading>
-              <Heading as="h2" className="">
-                Revolutionary.
-              </Heading>
+              <h3 className="text-3xl">Compose with design.</h3>
+              <p className="text-xl">It's a breeze.</p>
+              <div className="flex flex-col space-y-0">
+                <b className="text-xl">Drag and drop.</b>
+                <p>Put text, links, photos, and more in their place.</p>
+                <SupplementaryText>
+                  Powered by Hikium canvas technologies
+                </SupplementaryText>
+              </div>
+              <div className="flex flex-col space-y-0">
+                <b className="text-xl">Beautiful components.</b>
+                <p>Whatever the screen, they just fit.</p>
+                <SupplementaryText>
+                  Powered by Hikium Responsive Design
+                </SupplementaryText>
+              </div>
             </div>
-            <div className="flex flex-col space-y-2">
-              <p>With Hikium EC, your code is yours, forever.</p>
-              <p>
-                Export your website to only 3 files<sup>1</sup> and take your
-                code to any deployment platform. Because EC only builds
-                websites, you choose the deployment platform and you choose when
-                it's time to upgrade.
-              </p>
-              <p>
-                <b>5th generation content code</b> unlocks the media and
-                accessibility features of the future. And with{" "}
-                <b>ECMAScript 2022 international standard</b>
-                <sup>2</sup> compatible logic code, it just works, today and
-                tomorrow.
-              </p>
-            </div>
-          </m.section>
-        </m.div>
-
-        {/* No account */}
-        <section className="flex flex-col space-y-10 mx-5 lg:mx-52">
-          <div className="flex flex-col space-y-2">
-            <Heading as="h2">Hikium EC minds it's own business.</Heading>
-            <Heading as="h2">Not yours.</Heading>
           </div>
-          <div className="flex flex-col space-y-2">
-            <p>
-              Access the full potential of Hikium EC's creative limits, all
-              without leaking your data. How can we promise that?
+        </section>
+        <section
+          className="flex justify-between px-52"
+          style={{
+            borderTopLeftRadius: "2em",
+            borderTopRightRadius: "2em",
+            borderBottomLeftRadius: "2em",
+            borderBottomRightRadius: "2em",
+          }}
+        >
+          <div className="flex items-end">
+            <div className="flex flex-col space-y-5">
+              <h3 className="text-3xl">Deploy with code.</h3>
+              <p className="text-xl">It's easy.</p>
+              <div className="flex flex-col space-y-0">
+                <b className="text-xl">
+                  5<sup>th</sup> generation content code.<sup>1</sup>
+                </b>
+                <p>The living standard.</p>
+              </div>
+              <div className="flex flex-col space-y-0">
+                <b className="text-xl">
+                  ECMAScript® 2022 logic code.<sup>2</sup>
+                </b>
+                <p>The international standard.</p>
+              </div>
+            </div>
+          </div>
+          <Image
+            src={imageChildCoding}
+            alt="Child looking at code"
+            layout="fixed"
+            width={500}
+            height={800}
+            style={{
+              borderTopLeftRadius: "2em",
+              borderTopRightRadius: "2em",
+              borderBottomLeftRadius: "2em",
+              borderBottomRightRadius: "2em",
+            }}
+          />
+        </section>
+
+        {/* Code export */}
+        <section
+          className="flex flex-col space-y-20 shadow-sm bg-black text-white p-20 mx-5"
+          style={{
+            borderTopLeftRadius: "2em",
+            borderTopRightRadius: "2em",
+            borderBottomLeftRadius: "2em",
+            borderBottomRightRadius: "2em",
+          }}
+        >
+          <h3 className="text-5xl">
+            Portability.
+            <br />
+            Revolutionary.
+          </h3>
+          <div className="flex justify-between">
+            <p className="text-xl w-1/3">
+              <b>You own your code.</b> Export your website to only 3 files
+              <sup>3</sup> and take your code to any deployment platform.
             </p>
-            <p>
-              Because we don't have your data in the first place. Hikium EC is
-              the first website builder on the planet to offer a full suite of
-              website creation tools, without any sign up required. Even your
-              website data doesn't leave your device. With Hikium Storage
-              Transfer, not one byte of your website leaves your device. It's
-              yours, and your's alone.
-            </p>
-            <p></p>
+            <Image
+              src={imageCity}
+              width={600}
+              height={400}
+              style={{
+                borderTopLeftRadius: "2em",
+                borderTopRightRadius: "2em",
+                borderBottomLeftRadius: "2em",
+                borderBottomRightRadius: "2em",
+              }}
+            />
+          </div>
+          <div className="flex justify-start">
+            <div className="flex flex-col space-y-5 w-1/3">
+              <p className="text-xl">
+                <b>Never obsolete.</b> Because Hikium EC only builds websites,
+                you choose the deployment platform and you choose when it's time
+                to upgrade.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Free */}
-        <section className="flex flex-col space-y-10 mx-5 lg:mx-52">
+        <section className="flex flex-row space-x-20 mx-5 lg:mx-52">
           <div className="flex flex-col space-y-2">
             <Heading as="h2">Free. Priceless.</Heading>
           </div>
-          <div className="flex flex-col space-y-2">
-            <p>No sign-in. No cost.</p>
-            <p>Access the power of Hikium EC without paying a cent.</p>
+          <div className="flex justify-center items-center">
+            <p className="text-xl">No cost, never and ever.</p>
           </div>
         </section>
 
-        {/* Responsive design */}
-        <section className="flex flex-col space-y-10 mx-5 lg:mx-52">
-          <div className="flex flex-col space-y-2">
-            <Heading as="h2">3 breakpoints.</Heading>
-            <Heading as="h2">1 technology.</Heading>
+        <section
+          className="flex flex-col space-y-20 shadow-sm bg-black/5 dark:bg-white/5 p-20 mx-5"
+          style={{
+            borderTopLeftRadius: "2em",
+            borderTopRightRadius: "2em",
+            borderBottomLeftRadius: "2em",
+            borderBottomRightRadius: "2em",
+          }}
+        >
+          <h3 className="text-5xl">
+            Accessibility
+            <br />
+            An EC ability
+            <span className="pl-2">
+              <sup>4</sup>
+            </span>
+          </h3>
+          <div className="flex justify-between">
+            <video
+              autoPlay={true}
+              loop
+              controlsList="nodownload"
+              width={700}
+              height={1400}
+              style={{
+                borderTopLeftRadius: "2em",
+                borderTopRightRadius: "2em",
+                borderBottomLeftRadius: "2em",
+                borderBottomRightRadius: "2em",
+              }}
+              className={colourFiltersDemo}
+            >
+              <source src="images/colour.mp4" type="video/mp4" />
+            </video>
+            <p className="text-xl w-1/3">
+              <b>See how others view the hue.</b> Try colour filters, like some
+              colourblindness conditions.
+              <sup>5</sup>
+            </p>
           </div>
-          <p>
-            With Hikium Responsive Design, building websites that look amazing
-            on all devices is no longer a struggle. Simply select your
-            breakpoint and design according to the screen size. And the best
-            part? Responsive Design is completely open-source and available to
-            everyone, everywhere.
-          </p>
+          <div className="flex justify-end">
+            <div className="flex flex-col space-y-5 w-1/3">
+              <p className="text-xl">
+                <b>Proximity algorithms ahead.</b> Hikium EC detects when things
+                are too close to each other.
+              </p>
+              <p className="text-xl">
+                <b>Your contrast copilot.</b> Raw colour contrast ratios,
+                calculated on the fly.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="flex flex-col md:flex-row md:space-x-10 md:px-52">
+          <div className="flex flex-col space-y-5 w-1/3">
+            <IconWifiOff width={64} height={64} />
+            <div className="flex flex-col space-y-0">
+              <b className="text-xl">Work offline.</b>
+              <p>
+                Compose anywhere, anytime.<sup>6</sup>
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col space-y-5 w-1/3">
+            <IconLock width={64} height={64} />
+            <div className="flex flex-col space-y-0">
+              <b className="text-xl">Private by design.</b>
+              <p>
+                Your data never leaves your device.
+                <br /> We never see it.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col space-y-5 w-1/3">
+            <div style={{ width: "63px", height: "63px" }}>
+              <MInitiativesIcon />
+            </div>
+            <div className="flex flex-col space-y-0">
+              <b className="text-xl">Open-source at Hikium.</b>
+              <p>
+                The M Initiatives. Open-source, for the metaverse and beyond.
+              </p>
+            </div>
+            <Link href="/m" passHref>
+              <Button icon={<IconArrowRight />}>
+                Discover open-source at Hikium
+              </Button>
+            </Link>
+          </div>
         </section>
 
         {/* End of page call-to-action */}
@@ -294,48 +456,48 @@ export default function Home() {
           </span>
         </section>
 
-        {/* M Marketing */}
-        <section className="flex flex-col space-y-5 mx-5 lg:mx-52">
-          <div className="flex flex-row md:space-x-5 justify-center">
-            <h2 className="leading-none hidden md:flex text-4xl">Hikium</h2>
-            <div className="hidden md:flex md:items-center md:justify-center">
-              <div className="w-10 h-10">
-                <MInitiativesIcon />
-              </div>
-            </div>
-            <h2 className="leading-none hidden md:flex text-4xl">
-              Initiatives
-            </h2>
-            <h2 style={{ fontSize: "2em" }} className="leading-none md:hidden">
-              Hikium M Initiatives
-            </h2>
-          </div>
-          <p className="text-center">M for metaverse. M for tomorrow.</p>
-          <Link href="/m" passHref>
-            <Button icon={<IconArrowRight />}>
-              Discover open-source at Hikium
-            </Button>
-          </Link>
-        </section>
-
         {/* Disclaimers */}
         <section className="flex flex-col space-y-0 mx-5 lg:mx-52 lg:w-1/3">
           <SupplementaryText>
             Early development version. Features may change before release.
           </SupplementaryText>
           <SupplementaryText>
+            Some media from{" "}
+            <Link href="/legal/attributions">our stock media partners</Link>.
+          </SupplementaryText>
+          <SupplementaryText>
             <ol className="list list-decimal pl-5">
+              <li>
+                Exported code compatible with the HTML Living Standard
+                specification, a subset of HTML5.
+              </li>
+              <li>
+                Exported code compatible with ECMA-262, 13th edition, June 2022.
+                Actual implementation may differ from specification. ECMAScript®
+                is a registered trademark of Ecma International.
+              </li>
               <li>
                 For websites without images. Excludes EC application files.
               </li>
               <li>
-                Compatible with ECMA-262, 13th edition, June 2022. ECMAScript®
-                is a registered trademark of Ecma International.
+                Accessibility guides provided for informational purposes only.
+                Accuracy not guaranteed. No warranties. Consult an accessibility
+                specialist before deploying your site.
+              </li>
+              <li>
+                Generalisation of medical conditions. Provided for informational
+                purposes only. Not intended to diagnose a medical condition. For
+                accurate information, consult a qualified specialist.
+              </li>
+              <li>
+                Internet connection required to enable offline use. Compatible
+                software required for offline use. Some features require a
+                persistent Internet connection. Internet connection required for
+                project setup.
               </li>
             </ol>
           </SupplementaryText>
         </section>
-
       </main>
     </>
   );

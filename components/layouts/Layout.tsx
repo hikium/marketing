@@ -34,7 +34,7 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
           </Link>
         </div>
         <div className="flex flex-row space-x-5">
-          <Link href="/" passHref>
+          <Link href="/ec" passHref>
             <Button
               icon={
                 <div className="w-6 h-6">

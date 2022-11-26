@@ -19,11 +19,10 @@ import Heading from "components/system/Heading";
 import {
   IconArrowRight,
   IconBrandSpotify,
-  IconCapture,
   IconLock,
   IconWifiOff,
 } from "@tabler/icons";
-import { m, Variants } from "framer-motion";
+import { AnimatePresence, m, useScroll, Variants } from "framer-motion";
 
 // First party components
 import ECIcon from "components/brand/ECIcon";
@@ -34,33 +33,28 @@ import Image from "next/image";
 import imageChildThinking from "/public/images/child-canvas.webp";
 import imageChildCoding from "/public/images/child-code.webp";
 import imageCity from "/public/images/city.webp";
-import imageMountain from "/public/images/mountain.webp";
+import imageElainaPromotionAlbum from "/public/images/elaina-promotion-album.webp";
+import imageElainaPromotionPrimary from "/public/images/elaina-promotion-primary.webp";
 
-import { useState, Suspense } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useInterval } from "hooks/useInterval";
 
 export default function Home() {
-  // Brand collaboration card animation
-  const [isHeadingGreyed, setHeadingGreyed] = useState(false);
-  const [showCultureHeading, setShowCultureHeading] = useState(false);
-  useInterval(() => setHeadingGreyed(true), 1200);
-  useInterval(() => setShowCultureHeading(true), 1750);
-
   // Feature card animations
-  const cardVariants: Variants = {
-    offscreen: {
-      y: 300,
-    },
-    onscreen: {
-      y: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.2,
-        duration: 0.8,
-        // delay: 0.05,
-      },
-    },
-  };
+  // const cardVariants: Variants = {
+  //   offscreen: {
+  //     y: 300,
+  //   },
+  //   onscreen: {
+  //     y: 0,
+  //     transition: {
+  //       type: "spring",
+  //       bounce: 0.2,
+  //       duration: 0.8,
+  //       // delay: 0.05,
+  //     },
+  //   },
+  // };
 
   // Dynamic colours
   const filterNone = "";
@@ -84,6 +78,95 @@ export default function Home() {
     setColourFiltersDemo(colourFiltersDemoColours[colourFiltersDemoIndex]);
   }, 2000);
 
+  // Brand collaboration card animation
+  const { scrollYProgress } = useScroll();
+  const [isHeadingGreyed, setHeadingGreyed] = useState(false);
+  const [showCultureHeading, setShowCultureHeading] = useState(false);
+  const [culturePromotionAnimationIndex, setCulturePromotionAnimationIndex] =
+    useState(0);
+  useInterval(() => {
+    setCulturePromotionAnimationIndex(1);
+  }, 2000);
+  useInterval(() => setHeadingGreyed(true), 3200);
+  useInterval(() => setShowCultureHeading(true), 3750);
+  const [isECTextLocking, setECTextLocking] = useState(false);
+  useEffect(() => {
+    // @ts-ignore: Not typed
+    if (scrollYProgress.current >= 0.3) {
+      setECTextLocking(true);
+    }
+  });
+
+  function ECText() {
+    return (
+      <>
+        <div className="flex flex-row md:space-x-5">
+          <h2 style={{ fontSize: "5em" }} className="leading-none">
+            The new
+          </h2>
+        </div>
+        <div className="flex flex-row md:space-x-5">
+          <h2 style={{ fontSize: "5em" }} className="leading-none">
+            Hikium
+          </h2>
+          <div className="hidden md:flex md:items-center md:justify-center">
+            <div className="w-20 h-20">
+              <ECIcon />
+            </div>
+          </div>
+          {/* Mobile */}
+          <h2 style={{ fontSize: "5em" }} className="leading-none md:hidden">
+            EC
+          </h2>
+        </div>
+      </>
+    );
+  }
+  function CultureText() {
+    return (
+      <>
+        <div className="flex flex-row md:space-x-5">
+          <h2 style={{ fontSize: "5em" }} className="leading-none">
+            Composes
+          </h2>
+        </div>
+        <div>
+          <Suspense
+            fallback={
+              <h2
+                style={{ fontSize: "5em" }}
+                className="leading-none md:hidden"
+              >
+                Composes {showCultureHeading ? "culture" : "websites"}
+              </h2>
+            }
+          >
+            {showCultureHeading ? (
+              <h2 style={{ fontSize: "5em" }} className="leading-none">
+                culture
+              </h2>
+            ) : (
+              <h2
+                style={{
+                  fontSize: "5em",
+                  color: isHeadingGreyed ? "#9ca3af" : "inherit",
+                }}
+                className="leading-none"
+              >
+                websites
+              </h2>
+            )}
+          </Suspense>
+        </div>
+      </>
+    );
+  }
+
+  const culturePromotionAnimationTabs = [
+    { component: <ECText /> },
+    { component: <CultureText /> },
+  ];
+
   return (
     <>
       <Head>
@@ -101,104 +184,148 @@ export default function Home() {
 
       <main className="flex flex-col space-y-48">
         {/* Headline marketing - our brand collaborations */}
-        <section
-          className="flex flex-col justify-between shadow-sm bg-black/5 dark:bg-white/5 p-20 mx-5"
-          style={{
-            borderTopLeftRadius: "2em",
-            borderTopRightRadius: "2em",
-            borderBottomLeftRadius: "2em",
-            borderBottomRightRadius: "2em",
-            height: "75vh",
-          }}
-        >
-          <div className="flex flex-col space-y-0">
-            <div className="flex flex-row md:space-x-5">
-              <h2
-                style={{ fontSize: "5.5em" }}
-                className="leading-none hidden md:flex"
-              >
-                The new Hikium
-              </h2>
-              <div className="hidden md:flex md:items-center md:justify-center">
-                <div className="w-20 h-20">
-                  <ECIcon />
+        <section className="w-screen">
+          <div className="hidden md:flex flex-row justify-between px-52">
+            <div className="flex flex-col justify-between">
+              {isECTextLocking ? (
+                <div className="flex flex-col space-y-0">
+                  <ECText />
+                </div>
+              ) : (
+                <AnimatePresence mode="wait">
+                  <m.div
+                    key={culturePromotionAnimationIndex}
+                    initial={{ x: 10, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -10, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex flex-col space-y-0"
+                  >
+                    {
+                      culturePromotionAnimationTabs[
+                        culturePromotionAnimationIndex
+                      ].component
+                    }
+                  </m.div>
+                </AnimatePresence>
+              )}
+              <div className="flex flex-col md:flex-row space-y-2 md:space-x-5">
+                {/* Album cover */}
+                <Image
+                  src={imageElainaPromotionAlbum}
+                  alt="Serendipity album"
+                  layout="fixed"
+                  width={150}
+                  height={150}
+                  style={{
+                    borderTopLeftRadius: "1em",
+                    borderTopRightRadius: "1em",
+                    borderBottomLeftRadius: "1em",
+                    borderBottomRightRadius: "1em",
+                  }}
+                />
+                <div className="flex flex-col space-y-5 justify-end items-start">
+                  <div className="flex flex-col space-y-0">
+                    <SupplementaryText>Serendipity</SupplementaryText>
+                    <SupplementaryText>Elaina Paterakis</SupplementaryText>
+                  </div>
+                  <Link
+                    href="https://share.amuse.io/album/elaina-paterakis-serendipity"
+                    passHref
+                  >
+                    <Button icon={<IconBrandSpotify />}>
+                      Pre-Save the Album
+                    </Button>
+                  </Link>
                 </div>
               </div>
-              {/* Mobile */}
-              <h2
-                style={{ fontSize: "2em" }}
-                className="leading-none md:hidden"
-              >
-                The new Hikium EC
-              </h2>
             </div>
-            <div className="flex flex-row md:space-x-5">
-              <h2
-                style={{ fontSize: "5.5em" }}
-                className="leading-none hidden md:flex"
-              >
-                Composes
-              </h2>
-              <Suspense
-                fallback={
-                  <h2
-                    style={{ fontSize: "5.5em" }}
-                    className="leading-none md:hidden"
-                  >
-                    Composes {showCultureHeading ? "culture" : "websites"}
-                  </h2>
-                }
-              >
-                {showCultureHeading ? (
-                  <m.h2
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    exit={{ scale: 0 }}
-                    style={{ fontSize: "5.5em" }}
-                    className="leading-none hidden md:flex"
-                  >
-                    culture
-                  </m.h2>
-                ) : (
-                  <m.h2
-                    initial={{ scale: 1 }}
-                    animate={{ scale: 0 }}
-                    exit={{ scale: 1 }}
-                    transition={{ delay: 1.6 }}
-                    style={{
-                      fontSize: "5.5em",
-                      color: isHeadingGreyed ? "#9ca3af" : "inherit",
-                    }}
-                    className="leading-none hidden md:flex"
-                  >
-                    websites
-                  </m.h2>
-                )}
-              </Suspense>
-              {/* Mobile */}
-              <h2
-                style={{ fontSize: "2em" }}
-                className="leading-none md:hidden"
-              >
-                Composes {showCultureHeading ? "culture" : "websites"}
-              </h2>
-            </div>
-          </div>
-          <div className="flex flex-col space-y-5 md:flex-row md:justify-between">
-            <div className="flex flex-col md:flex-row space-y-2 md:space-x-5">
-              {/* Album cover */}
-              <div className="bg-black/25 dark:bg-white/25 h-36 w-36 rounded-2xl" />
-              <div className="flex justify-center items-end">
-                <Button icon={<IconBrandSpotify />}>Stream the Single</Button>
+            <div className="flex flex-col space-y-10">
+              <Image
+                src={imageElainaPromotionPrimary}
+                alt="Elaina Paterakis at the beach"
+                layout="fixed"
+                width={400}
+                height={450}
+                style={{
+                  borderTopLeftRadius: "1em",
+                  borderTopRightRadius: "1em",
+                  borderBottomLeftRadius: "1em",
+                  borderBottomRightRadius: "1em",
+                }}
+                priority
+              />
+              <div className="flex flex-col md:flex-row space-y-2 md:space-x-5 justify-center items-end">
+                <SupplementaryText className="flex justify-center items-center text-end">
+                  Coming in 2023
+                </SupplementaryText>
+                <Button icon={<IconArrowRight />} isDisabled>
+                  Open the EC App
+                </Button>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row space-y-2 md:space-x-5 justify-center items-end">
-              <SupplementaryText className="flex justify-center items-center text-end">
-                Coming in 2023
-              </SupplementaryText>
+          </div>
+          {/* Mobile */}
+          <div className="flex md:hidden flex-col space-y-20">
+            <div className="flex justify-center items-center">
+              <Image
+                src={imageElainaPromotionPrimary}
+                alt="Elaina Paterakis at the beach"
+                layout="fixed"
+                width={360}
+                height={450}
+                style={{
+                  borderTopLeftRadius: "1em",
+                  borderTopRightRadius: "1em",
+                  borderBottomLeftRadius: "1em",
+                  borderBottomRightRadius: "1em",
+                  paddingLeft: "0.25rem",
+                  paddingRight: "0.25rem",
+                }}
+                priority
+              />
+            </div>
+            <div className="px-5">
+              {isECTextLocking ? (
+                <div className="flex flex-col space-y-0">
+                  <ECText />
+                </div>
+              ) : (
+                <AnimatePresence mode="wait">
+                  <m.div
+                    key={culturePromotionAnimationIndex}
+                    initial={{ x: 10, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -10, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex flex-col space-y-0"
+                  >
+                    {
+                      culturePromotionAnimationTabs[
+                        culturePromotionAnimationIndex
+                      ].component
+                    }
+                  </m.div>
+                </AnimatePresence>
+              )}
+            </div>
+            <div className="flex flex-col space-y-2 px-5">
               <Button icon={<IconArrowRight />} isDisabled>
                 Open the EC App
               </Button>
+              <SupplementaryText>Coming in 2023</SupplementaryText>
+            </div>
+            <div className="flex flex-col space-y-5 px-5">
+              <div className="flex flex-col space-y-0">
+                <SupplementaryText>Serendipity</SupplementaryText>
+                <SupplementaryText>Elaina Paterakis</SupplementaryText>
+              </div>
+              <Link
+                href="https://share.amuse.io/album/elaina-paterakis-serendipity"
+                passHref
+              >
+                <Button icon={<IconBrandSpotify />}>Pre-Save the Album</Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -208,7 +335,7 @@ export default function Home() {
 
         {/* Easy to use section */}
         <section
-          className="flex justify-between px-52"
+          className="flex justify-between px-5 md:px-52"
           style={{
             borderTopLeftRadius: "2em",
             borderTopRightRadius: "2em",
@@ -252,7 +379,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="flex justify-between px-52"
+          className="flex justify-between px-5 md:px-52"
           style={{
             borderTopLeftRadius: "2em",
             borderTopRightRadius: "2em",
@@ -356,12 +483,9 @@ export default function Home() {
           }}
         >
           <h3 className="text-5xl">
-            Accessibility
+            Science.
             <br />
-            An EC ability
-            <span className="pl-2">
-              <sup>4</sup>
-            </span>
+            It makes brilliance.
           </h3>
           <div className="flex justify-between">
             <video
@@ -381,16 +505,15 @@ export default function Home() {
               <source src="images/colour.mp4" type="video/mp4" />
             </video>
             <p className="text-xl w-1/3">
-              <b>See how others view the hue.</b> Try colour filters, like some
-              colourblindness conditions.
-              <sup>5</sup>
+              <b>Work with colour.</b> Filter and rotate colours, or pick a
+              colour from the screen.<sup>4</sup>
             </p>
           </div>
           <div className="flex justify-end">
             <div className="flex flex-col space-y-5 w-1/3">
               <p className="text-xl">
                 <b>Proximity algorithms ahead.</b> Hikium EC detects when things
-                are too close to each other.
+                are too close.
               </p>
               <p className="text-xl">
                 <b>Your contrast copilot.</b> Raw colour contrast ratios,
@@ -400,27 +523,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex flex-col md:flex-row md:space-x-10 md:px-52">
-          <div className="flex flex-col space-y-5 w-1/3">
+        <section className="flex flex-col space-y-10 md:flex-row md:space-x-10 md:space-y-0 px-5 md:px-52">
+          <div className="flex flex-col space-y-5 md:w-1/3">
             <IconWifiOff width={64} height={64} />
             <div className="flex flex-col space-y-0">
               <b className="text-xl">Work offline.</b>
               <p>
-                Compose anywhere, anytime.<sup>6</sup>
+                Compose anywhere, anytime.<sup>5</sup>
               </p>
             </div>
           </div>
-          <div className="flex flex-col space-y-5 w-1/3">
+          <div className="flex flex-col space-y-5 md:w-1/3">
             <IconLock width={64} height={64} />
             <div className="flex flex-col space-y-0">
               <b className="text-xl">Private by design.</b>
               <p>
-                Your data never leaves your device.
+                Your data<sup>6</sup> never leaves your device.
                 <br /> We never see it.
               </p>
             </div>
           </div>
-          <div className="flex flex-col space-y-5 w-1/3">
+          <div className="flex flex-col space-y-5 md:w-1/3">
             <div style={{ width: "63px", height: "63px" }}>
               <MInitiativesIcon />
             </div>
@@ -446,7 +569,7 @@ export default function Home() {
                 <ECIcon />
               </div>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="hidden md:flex justify-center items-center">
               <p>Hikium Experience Composer website builder</p>
             </div>
           </div>
@@ -462,14 +585,14 @@ export default function Home() {
             Early development version. Features may change before release.
           </SupplementaryText>
           <SupplementaryText>
-            Some media from{" "}
-            <Link href="/legal/attributions">our stock media partners</Link>.
+            Some media by <Link href="/legal/attributions">partners</Link>.
+            Elaina Paterakis is a Recognised Collaborator.
           </SupplementaryText>
           <SupplementaryText>
             <ol className="list list-decimal pl-5">
               <li>
                 Exported code compatible with the HTML Living Standard
-                specification, a subset of HTML5.
+                specification, derived from the HTML5 specification.
               </li>
               <li>
                 Exported code compatible with ECMA-262, 13th edition, June 2022.
@@ -477,23 +600,16 @@ export default function Home() {
                 is a registered trademark of Ecma International.
               </li>
               <li>
-                For websites without images. Excludes EC application files.
+                For websites with one (1) page and no images. Excludes EC files.
               </li>
-              <li>
-                Accessibility guides provided for informational purposes only.
-                Accuracy not guaranteed. No warranties. Consult an accessibility
-                specialist before deploying your site.
-              </li>
-              <li>
-                Generalisation of medical conditions. Provided for informational
-                purposes only. Not intended to diagnose a medical condition. For
-                accurate information, consult a qualified specialist.
-              </li>
+              <li>Compatible software required.</li>
               <li>
                 Internet connection required to enable offline use. Compatible
-                software required for offline use. Some features require a
-                persistent Internet connection. Internet connection required for
-                project setup.
+                software required. Some features require an Internet connection.
+              </li>
+              <li>
+                "Your data" means Web Storage. See the{" "}
+                <Link href="/legal/privacy">Privacy Statement</Link>.
               </li>
             </ol>
           </SupplementaryText>

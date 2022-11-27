@@ -11,6 +11,8 @@ import "@fontsource/public-sans/600.css";
 
 // Global providers
 import { MotionConfig, LazyMotion, domAnimation } from "framer-motion";
+import { useRouter } from "next/router";
+import useAckee from "lib/useAckee";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactElement;
@@ -26,6 +28,20 @@ export default function Application({
 }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page);
+
+  const { pathname } = useRouter();
+  useAckee(
+    pathname,
+    {
+      server: "https://ackee.hikium.com",
+      domainId: "2e846c93-9ead-47d0-b8dc-1e9cc57d2520",
+    },
+    {
+      detailed: false,
+      ignoreLocalhost: true,
+      ignoreOwnVisits: true,
+    }
+  );
 
   return (
     <MotionConfig reducedMotion="user">

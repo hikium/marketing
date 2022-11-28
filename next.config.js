@@ -4,7 +4,7 @@ const contentSecurityPolicy = `
   default-src 'self' *.hikium.com *-hikium-marketing.netlify.app;
   script-src 'self' *.hikium.com *-hikium-marketing.netlify.app;
   child-src hikium.com;
-  style-src 'self';
+  style-src 'self' *.hikium.com 'unsafe-inline';
   font-src 'self';  
 `;
 

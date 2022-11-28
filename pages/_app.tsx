@@ -39,7 +39,7 @@ export default function Application({
     {
       detailed: true,
       ignoreLocalhost: true,
-      ignoreOwnVisits: true,
+      ignoreOwnVisits: false,
     }
   );
 

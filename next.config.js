@@ -3,7 +3,7 @@
 const globalHeaders = [
   {
     key: "Access-Control-Allow-Origin",
-    value: "https://netlify.app",
+    value: "https://ackee.hikium.com",
   },
   {
     key: "Access-Control-Allow-Methods",

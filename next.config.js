@@ -1,13 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const contentSecurityPolicy = `
-  default-src 'self' *.hikium.com 'unsafe-eval';
-  script-src 'self' *.hikium.com 'unsafe-eval';
-  child-src hikium.com;
-  style-src 'self' *.hikium.com 'unsafe-inline';
-  font-src 'self';  
-`;
-
 const globalHeaders = [
   {
     key: "Access-Control-Allow-Origin",
@@ -29,10 +21,6 @@ const globalHeaders = [
   {
     key: "Access-Control-Max-Age",
     value: "3600",
-  },
-  {
-    key: "Content-Security-Policy",
-    value: contentSecurityPolicy.replace(/\s{2,}/g, " ").trim(),
   },
 ];
 

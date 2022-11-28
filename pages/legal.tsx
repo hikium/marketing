@@ -10,6 +10,9 @@ import Link from "next/link";
 // First party components
 import Card from "components/system/Card";
 
+// Design
+import { IconGavel } from "@tabler/icons";
+
 // Layouts
 import Layout from "components/layouts/Layout";
 import Button from "components/system/Button";
@@ -30,73 +33,84 @@ export default function Legal() {
         />
       </Head>
 
-      <div className="flex flex-col space-y-10">
-        <header>
-          <h1>Hikium Legal</h1>
+      <div className="flex flex-col space-y-20">
+        {/* <header>
+          <Card className="h-80 flex flex-col justify-between">
+            <div className="flex flex-col space-y-5">
+              <h1>Hikium Legal</h1>
+              <p className="w-1/3">
+                Hikium upholds the law, protecting what's right for all of us.
+                Every day, every project, product, and service.
+              </p>
+            </div>
+            <div className="flex justify-end">
+              <div className="flex p-5 bg-brand rounded-3xl">
+                <IconGavel width={96} height={96} />
+              </div>
+            </div>
+          </Card>
+        </header> */}
+        <header
+          className="flex flex-col justify-between"
+          style={{
+            height: "75vh",
+          }}
+        >
+          <div />
+          <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-8 justify-center align-center">
+            <div className="flex p-5 bg-brand rounded-3xl">
+              <IconGavel width={64} height={64} />
+            </div>
+            <h1 style={{ fontSize: "4em" }}>Hikium Legal</h1>
+          </div>
+          <div className="flex flex-col space-y-5 md:flex-row md:justify-between md:space-y-0">
+            <aside className="flex">
+              <Card className="w-1/2 flex flex-col space-y-5">
+                <p>
+                  At Hikium, we only collect the data we need, and we protect
+                  your data every step of the way.
+                </p>
+                <div className="flex">
+                  <Link href="/legal/privacy" passHref>
+                    <Button>Read our Privacy Statement</Button>
+                  </Link>
+                </div>
+              </Card>
+            </aside>
+          </div>
         </header>
         <main className="flex flex-col space-y-10">
-          <section className="flex flex-col space-y-2">
-            <Card>
-              <div className="flex flex-col space-y-5">
-                <h2>Hikium Web Services Privacy Statement</h2>
-                <Link href="/legal/privacy" passHref>
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Card>
-            <Card>
-              <div className="flex flex-col space-y-5">
-                <h2>Hikium Experience Composer Terms of Usage</h2>
-                <Button isDisabled>Coming Soon</Button>
-              </div>
-            </Card>
-            <Card>
-              <div className="flex flex-col space-y-5">
-                <h2>Hikium Website Terms of Usage</h2>
-                <Link href="/legal/site-terms" passHref>
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Card>
+          <section className="flex flex-col space-y-5">
+            <h2 className="text-2xl">Terms</h2>
+            <div className="flex flex-col space-y-2">
+              <Link href="/legal/terms/ec" passHref>
+                <Button>Hikium Experience Composer Terms of Usage</Button>
+              </Link>
+              <Link href="/legal/terms/website" passHref>
+                <Button>Hikium Marketing Website Terms of Usage</Button>
+              </Link>
+            </div>
           </section>
-          <section className="grid gap-4 grid-cols-3 grid-rows-1">
-            <Card>
-              <div className="flex flex-col space-y-5">
-                <h3 className="text-lg">Open-Source Software Licenses</h3>
-                <Link href="/legal/oss/oss-licenses" passHref>
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Card>
-            <Card>
-              <div className="flex flex-col space-y-5">
-                <h3 className="text-lg">Open-Source Font Licenses</h3>
-                <Link href="/legal/oss/font-licenses" passHref>
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Card>
-            <Card>
-              <div className="flex flex-col space-y-5">
-                <h3 className="text-lg">Project Affiliation Notice</h3>
-                <Link href="/legal/project-affiliation" passHref>
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Card>
+          <section className="flex flex-col space-y-5">
+            <h2 className="text-2xl">Open-Source at Hikium</h2>
+            <div className="flex flex-col space-y-2">
+              <Link href="/legal/opensource/oss-licenses" passHref>
+                <Button>Open-Source Software License Information</Button>
+              </Link>
+              <Link href="/legal/opensource/font-licenses" passHref>
+                <Button>Open-Source Font License Information</Button>
+              </Link>
+            </div>
           </section>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
-            Hikium projects, products, and services don't use cookies.
-          </p>
-          {/* <Link
-            href="/legal/policy-dates"
-            className="text-gray-600 dark:text-gray-400 text-sm"
-            passHref
-          >
-            <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer text-sm">
-              Major Policy First Effective Dates
-            </a>
-          </Link> */}
+          <section className="flex flex-col space-y-5">
+            <h2 className="text-2xl">Team</h2>
+            <div className="flex flex-col space-y-2">
+              <Link href="/legal/affiliation" passHref>
+                <Button>Project Affiliation Notice</Button>
+              </Link>
+              <Button isDisabled>Contact Hikium</Button>
+            </div>
+          </section>
         </main>
       </div>
     </div>

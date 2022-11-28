@@ -37,7 +37,7 @@ export default function Application({
       domainId: "2e846c93-9ead-47d0-b8dc-1e9cc57d2520",
     },
     {
-      detailed: false,
+      detailed: true,
       ignoreLocalhost: true,
       ignoreOwnVisits: true,
     }

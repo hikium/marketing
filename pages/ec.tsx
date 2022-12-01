@@ -31,7 +31,7 @@ export default function Home() {
   useInterval(() => setHeadingGreyed(true), 1200);
   useInterval(() => setShowCultureHeading(true), 1750);
 
-  // Feature card animations
+  // Feature card animations0
   const cardVariants: Variants = {
     offscreen: {
       y: 300,
@@ -63,7 +63,23 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col space-y-48">
-        
+
+      <video
+              autoPlay={true}
+              loop
+              controlsList="nodownload"
+              width={900}
+              height={1600}
+              style={{
+                borderTopLeftRadius: "2em",
+                borderTopRightRadius: "2em",
+                borderBottomLeftRadius: "2em",
+                borderBottomRightRadius: "2em",
+              }}
+              className="ml-auto mr-auto"
+            >
+              <source src="video/animation.mp4" type="video/mp4" />
+            </video>
 
       </main>
     </>

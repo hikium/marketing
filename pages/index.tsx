@@ -206,10 +206,8 @@ export default function Home() {
 
 
         {/* Homepage Video */}
-            <div>
-              <video src={require('./video.mp4')} />
-            </div>
-            
+        
+
         {/* <section></section> */}
 
         {/* Easy to use section */}

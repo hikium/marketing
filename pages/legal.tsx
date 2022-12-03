@@ -70,9 +70,11 @@ export default function Legal() {
                   At Hikium, we only collect the data we need, and we protect
                   your data every step of the way.
                 </p>
-                <Link href="/legal/privacy" passHref>
-                  <Button>Read our Privacy Statement</Button>
-                </Link>
+                <div className="flex">
+                  <Link href="/legal/privacy" passHref>
+                    <Button>Read our Privacy Statement</Button>
+                  </Link>
+                </div>
               </Card>
             </aside>
           </div>
@@ -98,18 +100,6 @@ export default function Legal() {
               <Link href="/legal/opensource/font-licenses" passHref>
                 <Button>Open-Source Font License Information</Button>
               </Link>
-              <Link
-                href="https://github.com/hikium/ddc/blob/main/LICENSE"
-                passHref
-              >
-                <Button>Hikium Drag+Drop Code License</Button>
-              </Link>
-              <Link
-                href="https://github.com/hikium/mxups/blob/main/LICENSE.txt"
-                passHref
-              >
-                <Button>Hikium MXUPS License</Button>
-              </Link>
             </div>
           </section>
           <section className="flex flex-col space-y-5">
@@ -118,9 +108,7 @@ export default function Legal() {
               <Link href="/legal/affiliation" passHref>
                 <Button>Project Affiliation Notice</Button>
               </Link>
-              <Link href="/contact" passHref>
-                <Button>Contact Hikium</Button>
-              </Link>
+              <Button isDisabled>Contact Hikium</Button>
             </div>
           </section>
         </main>

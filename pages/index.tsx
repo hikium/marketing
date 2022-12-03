@@ -509,7 +509,7 @@ export default function Home() {
               }}
               className={colourFiltersDemo}
             >
-              <source src="images/colour.mp4" type="video/mp4" />
+              <source src="video/colour.mp4" type="video/mp4" />
             </video>
             <p className="text-xl lg:w-1/3">
               <b>View the hue the whole way around.</b> Rotate and turn colours

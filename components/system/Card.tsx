@@ -1,6 +1,6 @@
 interface CardProps {
   children: React.ReactNode;
-  className?: string;
+  className: string;
 }
 
 /**
@@ -12,9 +12,7 @@ interface CardProps {
  */
 export default function Card({ children, className }: CardProps) {
   return (
-    <div
-      className={`bg-gray-100 dark:bg-gray-900 rounded-2xl p-5 ${className}`}
-    >
+    <div className={`bg-gray-100 dark:bg-gray-900 rounded-xl p-5 ${className}`}>
       {children}
     </div>
   );

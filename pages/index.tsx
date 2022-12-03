@@ -161,12 +161,12 @@ export default function Home() {
         <title>Hikium</title>
         <meta
           name="description"
-          content="The element of element of the web. Building the revolutionary Hikium Experience Composer website builder."
+          content="Building the revolutionary Hikium Experience Composer website builder."
         />
         <meta name="og:title" content="Hikium" />
         <meta
           name="og:description"
-          content="The element of element of the web"
+          content="Building the revolutionary Hikium Experience Composer website builder"
         />
       </Head>
       <main className="flex flex-col space-y-48">

@@ -58,16 +58,13 @@ export default function MPage() {
   return (
     <>
       <Head>
-        <title>Hikium</title>
+        <title>Hikium M Initiatives</title>
         <meta
           name="description"
-          content="The element of element of the web. Building the revolutionary Hikium Experience Composer website builder."
+          content="Open-source at Hikium. We're making tomorrow's technology free and priceless for all."
         />
-        <meta name="og:title" content="Hikium" />
-        <meta
-          name="og:description"
-          content="The element of element of the web"
-        />
+        <meta name="og:title" content="Hikium M Initiatives" />
+        <meta name="og:description" content="Open-source at Hikium" />
       </Head>
 
       <main className="flex flex-col space-y-48">

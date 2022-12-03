@@ -99,11 +99,9 @@ export default function Home() {
         />
       </Head>
       <main className="flex flex-col space-y-48">
-
-
         {/* Headline marketing - our brand collaborations */}
         <section
-          className="flex flex-col justify-between shadow-sm bg-black/5 dark:bg-white/5 p-20 mx-5"
+          className="flex flex-col justify-between shadow-sm bg-black/5 dark:bg-white/5 px-5 py-10 lg:px-20 lg:py-20 mx-0 lg:mx-5"
           style={{
             borderTopLeftRadius: "2em",
             borderTopRightRadius: "2em",
@@ -204,15 +202,27 @@ export default function Home() {
           </div>
         </section>
 
-
         {/* Homepage Video */}
-        
-
-        {/* <section></section> */}
+        {/* <section className="flex px-5 lg:px-52">
+          <video
+            autoPlay={true}
+            loop
+            controlsList="nodownload"
+            style={{
+              borderTopLeftRadius: "2em",
+              borderTopRightRadius: "2em",
+              borderBottomLeftRadius: "2em",
+              borderBottomRightRadius: "2em",
+            }}
+            className="w-fit h-fit"
+          >
+            <source src="video/animation.mp4" type="video/mp4" />
+          </video>
+        </section> */}
 
         {/* Easy to use section */}
         <section
-          className="flex justify-between px-52"
+          className="flex flex-col space-y-10 lg:flex-row lg:justify-between lg:space-y-0 px-5 lg:px-52"
           style={{
             borderTopLeftRadius: "2em",
             borderTopRightRadius: "2em",
@@ -220,20 +230,22 @@ export default function Home() {
             borderBottomRightRadius: "2em",
           }}
         >
-          <Image
-            src={imageChildThinking}
-            priority
-            alt="Child looking off to the side, thinking deeply"
-            layout="fixed"
-            width={500}
-            height={800}
-            style={{
-              borderTopLeftRadius: "2em",
-              borderTopRightRadius: "2em",
-              borderBottomLeftRadius: "2em",
-              borderBottomRightRadius: "2em",
-            }}
-          />
+          <div className="hidden lg:flex">
+            <Image
+              src={imageChildThinking}
+              priority
+              alt="Child looking off to the side, thinking deeply"
+              layout="fixed"
+              width={500}
+              height={800}
+              style={{
+                borderTopLeftRadius: "2em",
+                borderTopRightRadius: "2em",
+                borderBottomLeftRadius: "2em",
+                borderBottomRightRadius: "2em",
+              }}
+            />
+          </div>
           <div className="flex items-end">
             <div className="flex flex-col space-y-5">
               <h3 className="text-3xl">Compose with design.</h3>
@@ -256,7 +268,7 @@ export default function Home() {
           </div>
         </section>
         <section
-          className="flex justify-between px-52"
+          className="flex flex-col space-y-10 lg:flex-row lg:justify-between lg:space-y-0 px-5 lg:px-52"
           style={{
             borderTopLeftRadius: "2em",
             borderTopRightRadius: "2em",
@@ -282,24 +294,26 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Image
-            src={imageChildCoding}
-            alt="Child looking at code"
-            layout="fixed"
-            width={500}
-            height={800}
-            style={{
-              borderTopLeftRadius: "2em",
-              borderTopRightRadius: "2em",
-              borderBottomLeftRadius: "2em",
-              borderBottomRightRadius: "2em",
-            }}
-          />
+          <div className="hidden lg:flex">
+            <Image
+              src={imageChildCoding}
+              alt="Child looking at code"
+              layout="fixed"
+              width={500}
+              height={800}
+              style={{
+                borderTopLeftRadius: "2em",
+                borderTopRightRadius: "2em",
+                borderBottomLeftRadius: "2em",
+                borderBottomRightRadius: "2em",
+              }}
+            />
+          </div>
         </section>
 
         {/* Code export */}
         <section
-          className="flex flex-col space-y-20 shadow-sm bg-black text-white p-20 mx-5"
+          className="flex flex-col space-y-20 shadow-sm bg-black text-white px-5 py-10 lg:px-20 lg:py-20 mx-0 lg:mx-5"
           style={{
             borderTopLeftRadius: "2em",
             borderTopRightRadius: "2em",
@@ -312,46 +326,48 @@ export default function Home() {
             <br />
             Revolutionary.
           </h3>
-          <div className="flex justify-between">
-            <p className="text-xl w-1/3">
+          <div className="flex flex-col space-y-10 lg:flex-row lg:justify-between lg:space-y-0">
+            <p className="text-xl lg:w-1/3">
               <b>You own your code.</b> Export your website to only 3 files
               <sup>3</sup> and take your code to any deployment platform.
             </p>
-            <Image
-              src={imageCity}
-              width={600}
-              height={400}
-              style={{
-                borderTopLeftRadius: "2em",
-                borderTopRightRadius: "2em",
-                borderBottomLeftRadius: "2em",
-                borderBottomRightRadius: "2em",
-              }}
-            />
+            <div className="hidden lg:flex">
+              <Image
+                src={imageCity}
+                width={600}
+                height={400}
+                style={{
+                  borderTopLeftRadius: "2em",
+                  borderTopRightRadius: "2em",
+                  borderBottomLeftRadius: "2em",
+                  borderBottomRightRadius: "2em",
+                }}
+              />
+            </div>
           </div>
           <div className="flex justify-start">
-            <div className="flex flex-col space-y-5 w-1/3">
+            <div className="flex flex-col space-y-5 lg:w-1/3">
               <p className="text-xl">
                 <b>Never obsolete.</b> Because Hikium EC only builds websites,
-                you choose the deployment platform and you choose when it's time
-                to upgrade.
+                you choose the deployment platform and when it's time to
+                upgrade.
               </p>
             </div>
           </div>
         </section>
 
         {/* Free */}
-        <section className="flex flex-row space-x-20 mx-5 lg:mx-52">
+        <section className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-20 mx-5 lg:mx-52">
           <div className="flex flex-col space-y-2">
             <Heading as="h2">Free. Priceless.</Heading>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex lg:justify-center lg:items-center">
             <p className="text-xl">No cost, never and ever.</p>
           </div>
         </section>
 
         <section
-          className="flex flex-col space-y-20 shadow-sm bg-black/5 dark:bg-white/5 p-20 mx-5"
+          className="flex flex-col space-y-20 shadow-sm bg-black/5 dark:bg-white/5 px-5 py-10 lg:px-20 lg:py-20 mx-0 lg:mx-5"
           style={{
             borderTopLeftRadius: "2em",
             borderTopRightRadius: "2em",
@@ -360,14 +376,11 @@ export default function Home() {
           }}
         >
           <h3 className="text-5xl">
-            Accessibility
+            Science.
             <br />
-            An EC ability
-            <span className="pl-2">
-              <sup>4</sup>
-            </span>
+            It makes brilliance.
           </h3>
-          <div className="flex justify-between">
+          <div className="flex flex-col space-y-10 lg:flex-row lg:justify-between lg:space-y-0">
             <video
               autoPlay={true}
               loop
@@ -384,17 +397,16 @@ export default function Home() {
             >
               <source src="images/colour.mp4" type="video/mp4" />
             </video>
-            <p className="text-xl w-1/3">
-              <b>See how others view the hue.</b> Try colour filters, like some
-              colourblindness conditions.
-              <sup>5</sup>
+            <p className="text-xl lg:w-1/3">
+              <b>View the hue the whole way around.</b> Rotate and turn colours
+              with filters.
             </p>
           </div>
-          <div className="flex justify-end">
-            <div className="flex flex-col space-y-5 w-1/3">
+          <div className="flex justify-start lg:justify-end">
+            <div className="flex flex-col space-y-5 lg:w-1/3">
               <p className="text-xl">
                 <b>Proximity algorithms ahead.</b> Hikium EC detects when things
-                are too close to each other.
+                are too close.
               </p>
               <p className="text-xl">
                 <b>Your contrast copilot.</b> Raw colour contrast ratios,
@@ -404,27 +416,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex flex-col md:flex-row md:space-x-10 md:px-52">
-          <div className="flex flex-col space-y-5 w-1/3">
+        <section className="flex flex-col space-y-10 lg:flex-row lg:space-x-10 lg:space-y-0 px-5 lg:px-52">
+          <div className="flex flex-col space-y-5 lg:w-1/3">
             <IconWifiOff width={64} height={64} />
             <div className="flex flex-col space-y-0">
               <b className="text-xl">Work offline.</b>
               <p>
-                Compose anywhere, anytime.<sup>6</sup>
+                Compose anywhere, anytime.<sup>4</sup>
               </p>
             </div>
           </div>
-          <div className="flex flex-col space-y-5 w-1/3">
+          <div className="flex flex-col space-y-5 lg:w-1/3">
             <IconLock width={64} height={64} />
             <div className="flex flex-col space-y-0">
               <b className="text-xl">Private by design.</b>
               <p>
-                Your data never leaves your device.
+                Your data<sup>5</sup> never leaves your device.
                 <br /> We never see it.
               </p>
             </div>
           </div>
-          <div className="flex flex-col space-y-5 w-1/3">
+          <div className="flex flex-col space-y-5 lg:w-1/3">
             <div style={{ width: "63px", height: "63px" }}>
               <MInitiativesIcon />
             </div>
@@ -451,11 +463,16 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center items-center">
-              <p>Hikium Experience Composer website builder</p>
+              <p>
+                Hikium Experience Composer website builder{" "}
+                <span className="bg-black/5 dark:bg-white/5 ml-2 px-2 rounded-full inline-block lg:hidden justify-center items-center text-sm font-display uppercase">
+                  Coming in 2023
+                </span>
+              </p>
             </div>
           </div>
           {/* Replace with Open EC button when launched */}
-          <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full flex justify-center items-center text-sm font-display uppercase">
+          <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full hidden lg:flex justify-center items-center text-sm font-display uppercase">
             Coming in 2023
           </span>
         </section>
@@ -481,23 +498,15 @@ export default function Home() {
                 is a registered trademark of Ecma International.
               </li>
               <li>
-                For websites without images. Excludes EC application files.
-              </li>
-              <li>
-                Accessibility guides provided for informational purposes only.
-                Accuracy not guaranteed. No warranties. Consult an accessibility
-                specialist before deploying your site.
-              </li>
-              <li>
-                Generalisation of medical conditions. Provided for informational
-                purposes only. Not intended to diagnose a medical condition. For
-                accurate information, consult a qualified specialist.
+                For websites with one (1) page and no images. Excludes EC files.
               </li>
               <li>
                 Internet connection required to enable offline use. Compatible
-                software required for offline use. Some features require a
-                persistent Internet connection. Internet connection required for
-                project setup.
+                software required. Some features require an Internet connection.
+              </li>
+              <li>
+                "Your data" means Web Storage.{" "}
+                <Link href="/legal/privacy">Privacy Statement...</Link>
               </li>
             </ol>
           </SupplementaryText>

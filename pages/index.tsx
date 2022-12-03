@@ -220,7 +220,9 @@ export default function Home() {
                     href="https://share.amuse.io/album/elaina-paterakis-serendipity"
                     passHref
                   >
-                    <Button icon={<IconBrandSpotify />}>Get the Album</Button>
+                    <Button icon={<IconBrandSpotify />}>
+                      Stream the Album
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -309,7 +311,7 @@ export default function Home() {
                 href="https://share.amuse.io/album/elaina-paterakis-serendipity"
                 passHref
               >
-                <Button icon={<IconBrandSpotify />}>Get the Album</Button>
+                <Button icon={<IconBrandSpotify />}>Stream the Album</Button>
               </Link>
             </div>
           </div>

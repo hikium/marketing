@@ -63,24 +63,22 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col space-y-48">
-
-      <video
-              autoPlay={true}
-              loop
-              controlsList="nodownload"
-              width={900}
-              height={1600}
-              style={{
-                borderTopLeftRadius: "2em",
-                borderTopRightRadius: "2em",
-                borderBottomLeftRadius: "2em",
-                borderBottomRightRadius: "2em",
-              }}
-              className="ml-auto mr-auto"
-            >
-              <source src="video/animation.mp4" type="video/mp4" />
-            </video>
-
+        <video
+          autoPlay={true}
+          loop
+          controlsList="nodownload"
+          width={900}
+          height={1600}
+          style={{
+            borderTopLeftRadius: "2em",
+            borderTopRightRadius: "2em",
+            borderBottomLeftRadius: "2em",
+            borderBottomRightRadius: "2em",
+          }}
+          className="ml-auto mr-auto"
+        >
+          <source src="video/animation.mp4" type="video/mp4" />
+        </video>
       </main>
     </>
   );
@@ -88,3 +86,10 @@ export default function Home() {
 Home.getLayout = function getLayout(page: ReactElement) {
   return <Layout manualMargin={true}>{page}</Layout>;
 };
+
+// Return 404 in interim
+export async function getStaticProps() {
+  return {
+    notFound: true,
+  };
+}

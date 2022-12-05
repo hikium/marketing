@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       colors: {
         brand: "#e9e1b0",
+        ecgrey: "#868e9c",
+        mpink: "#c6007e",
       },
       fontFamily: {
         sans: ['"Public Sans"', "sans-serif"],

@@ -4,6 +4,9 @@ import Link from "next/link";
 // First party components
 import BrandWordmark from "components/brand/BrandWordmark";
 import ExternalLink from "components/system/ExternalLink";
+import Button from "components/system/Button";
+import ECIcon from "components/brand/ECIcon";
+import MInitiativesIcon from "components/brand/MInitiativesIcon";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,12 +21,38 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
         !manualMargin && "px-5 lg:px-52"
       } min-h-screen`}
     >
-      <nav className={`${manualMargin && "px-5 lg:px-52"} pt-10 w-fit`}>
-        <Link href="/" passHref>
-          <div className="w-20 h-4 cursor-pointer">
-            <BrandWordmark />
-          </div>
-        </Link>
+      <nav
+        className={`flex flex-row space-x-10 ${
+          manualMargin && "px-5 lg:px-52"
+        } pt-5 w-fit`}
+      >
+        <div className="flex justify-center items-center">
+          <Link href="/" passHref>
+            <div className="w-20 h-4 cursor-pointer">
+              <BrandWordmark />
+            </div>
+          </Link>
+        </div>
+        <div className="flex flex-row space-x-5">
+          <Link href="/" passHref>
+            <Button
+              icon={
+                <div className="w-6 h-6">
+                  <ECIcon />
+                </div>
+              }
+            />
+          </Link>
+          <Link href="/m" passHref>
+            <Button
+              icon={
+                <div className="w-6 h-6">
+                  <MInitiativesIcon />
+                </div>
+              }
+            />
+          </Link>
+        </div>
       </nav>
       <div className="flex-1">{children}</div>
       <footer
@@ -62,6 +91,11 @@ export default function Layout({ children, manualMargin }: LayoutProps) {
           <Link href="/legal/security">
             <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
               Responsible Disclosure
+            </a>
+          </Link>
+          <Link href="/contact">
+            <a className="underline underline-offset-4 text-gray-600 dark:text-gray-400 hover:text-black hover:dark:text-white hover:cursor-pointer">
+              Contact Hikium
             </a>
           </Link>
         </div>

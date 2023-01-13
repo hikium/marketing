@@ -38,6 +38,7 @@ import imageElainaPromotionPrimary from "/public/images/elaina-promotion-primary
 
 import { useEffect, useState, Suspense } from "react";
 import { useInterval } from "hooks/useInterval";
+import BrandLogo from "components/brand/BrandLogo";
 
 export default function Home() {
   // Brand collaboration card animation
@@ -97,14 +98,8 @@ export default function Home() {
           <h2 style={{ fontSize: "5em" }} className="leading-none">
             Hikium
           </h2>
-          <div className="hidden md:flex md:items-center md:justify-center">
-            <div className="w-20 h-20">
-              <ECIcon />
-            </div>
-          </div>
-          {/* Mobile */}
-          <h2 style={{ fontSize: "5em" }} className="leading-none md:hidden">
-            EC
+          <h2 style={{ fontSize: "5em" }} className="leading-none">
+            Tempo
           </h2>
         </div>
       </>
@@ -247,7 +242,7 @@ export default function Home() {
                   Coming in 2023
                 </SupplementaryText>
                 <Button icon={<IconArrowRight />} isDisabled>
-                  Open the EC App
+                  Open the Tempo App
                 </Button>
               </div>
             </div>
@@ -298,7 +293,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col space-y-2 px-5">
               <Button icon={<IconArrowRight />} isDisabled>
-                Open the EC App
+                Open the Tempo App
               </Button>
               <SupplementaryText>Coming in 2023</SupplementaryText>
             </div>
@@ -464,21 +459,10 @@ export default function Home() {
           <div className="flex justify-start">
             <div className="flex flex-col space-y-5 lg:w-1/3">
               <p className="text-xl">
-                <b>Never obsolete.</b> Because Hikium EC only builds websites,
-                you choose the deployment platform and when it's time to
-                upgrade.
+                <b>Never obsolete.</b> Because we only create, you choose the
+                deployment platform and when it's time to upgrade.
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Free */}
-        <section className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-20 mx-5 lg:mx-52">
-          <div className="flex flex-col space-y-2">
-            <Heading as="h2">Free. Priceless.</Heading>
-          </div>
-          <div className="flex lg:justify-center lg:items-center">
-            <p className="text-xl">No cost, never and ever.</p>
           </div>
         </section>
 
@@ -532,66 +516,42 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex flex-col space-y-10 lg:flex-row lg:space-x-10 lg:space-y-0 px-5 lg:px-52">
-          <div className="flex flex-col space-y-5 lg:w-1/3">
+        <section className="flex flex-col space-y-10 lg:flex-row lg:space-x-20 lg:space-y-0 justify-center items-center">
+          <div className="flex flex-col space-y-5">
             <IconWifiOff width={64} height={64} />
             <div className="flex flex-col space-y-0">
               <b className="text-xl">Work offline.</b>
               <p>
-                Compose anywhere, anytime.<sup>4</sup>
+                Build anywhere, anytime.<sup>4</sup>
               </p>
             </div>
           </div>
-          <div className="flex flex-col space-y-5 lg:w-1/3">
+          <div className="flex flex-col space-y-5">
             <IconLock width={64} height={64} />
             <div className="flex flex-col space-y-0">
               <b className="text-xl">Private by design.</b>
               <p>
-                Your data<sup>5</sup> never leaves your device.
-                <br /> We never see it.
+                We never see your data<sup>5</sup>, ever.
               </p>
             </div>
-          </div>
-          <div className="flex flex-col space-y-5 lg:w-1/3">
-            <div style={{ width: "63px", height: "63px" }}>
-              <MInitiativesIcon />
-            </div>
-            <div className="flex flex-col space-y-0">
-              <b className="text-xl">Open-source at Hikium.</b>
-              <p>
-                The M Initiatives. Open-source, for the metaverse and beyond.
-              </p>
-            </div>
-            <Link href="/m" passHref>
-              <Button icon={<IconArrowRight />}>
-                Discover open-source at Hikium
-              </Button>
-            </Link>
           </div>
         </section>
 
+        <hr />
+
         {/* End of page call-to-action */}
-        <section className="flex flex-row justify-between mx-5 lg:mx-52">
-          <div className="flex flex-row space-x-5 justify-center items-center">
-            <div className="flex justify-center items-center">
-              <div className="w-6 h-6">
-                <ECIcon />
-              </div>
-            </div>
-            <div className="flex justify-center items-center">
-              <p>
-                Hikium Experience Composer website builder{" "}
-                <span className="bg-black/5 dark:bg-white/5 ml-2 px-2 rounded-full inline-block lg:hidden justify-center items-center text-sm font-display uppercase">
-                  Coming in 2023
-                </span>
-              </p>
-            </div>
+        <section className="flex flex-col space-y-10 justify-center items-center text-center">
+          <div style={{ width: "63px", height: "63px" }}>
+            <BrandLogo />
           </div>
-          {/* Replace with Open EC button when launched */}
-          <span className="bg-black/5 dark:bg-white/5 px-5 rounded-full hidden lg:flex justify-center items-center text-sm font-display uppercase">
-            Coming in 2023
-          </span>
+          <div className="flex flex-col space-y-2">
+            <h2>Tempo is near</h2>
+            <p className="text-xl">The new way to create.</p>
+          </div>
+          <Button isDisabled>Coming in 2023</Button>
         </section>
+
+        <hr />
 
         {/* Disclaimers */}
         <section className="flex flex-col space-y-0 mx-5 lg:mx-52 lg:w-1/3">
@@ -614,7 +574,8 @@ export default function Home() {
                 is a registered trademark of Ecma International.
               </li>
               <li>
-                For websites with one (1) page and no images. Excludes EC files.
+                For websites with one (1) page and no images. Excludes app
+                files.
               </li>
               <li>
                 Internet connection required to enable offline use. Compatible

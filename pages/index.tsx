@@ -13,38 +13,23 @@ import Layout from "components/layouts/Layout";
 // First party design
 import Button from "components/system/Button";
 import SupplementaryText from "components/system/SupplementaryText";
-import Heading from "components/system/Heading";
 
 // Third party design
-import {
-  IconArrowRight,
-  IconBrandSpotify,
-  IconLock,
-  IconWifiOff,
-} from "@tabler/icons";
-import { AnimatePresence, m, useScroll } from "framer-motion";
+import { IconLock, IconWifiOff } from "@tabler/icons";
 
 // First party components
-import ECIcon from "components/brand/ECIcon";
-import MInitiativesIcon from "components/brand/MInitiativesIcon";
+import BrandLogo from "components/brand/BrandLogo";
 
 // Images
 import Image from "next/image";
 import imageChildThinking from "/public/images/child-canvas.webp";
 import imageChildCoding from "/public/images/child-code.webp";
 import imageCity from "/public/images/city.webp";
-import imageElainaPromotionAlbum from "/public/images/elaina-promotion-album.webp";
-import imageElainaPromotionPrimary from "/public/images/elaina-promotion-primary.webp";
 
 import { useEffect, useState, Suspense } from "react";
 import { useInterval } from "hooks/useInterval";
-import BrandLogo from "components/brand/BrandLogo";
 
 export default function Home() {
-  // Brand collaboration card animation
-  useInterval(() => setHeadingGreyed(true), 1200);
-  useInterval(() => setShowCultureHeading(true), 1750);
-
   // Dynamic colours
   const filterNone = "";
   const filterHueRotate180 = "hue-rotate-180";
@@ -67,88 +52,27 @@ export default function Home() {
     setColourFiltersDemo(colourFiltersDemoColours[colourFiltersDemoIndex]);
   }, 2000);
 
-  // Brand collaboration card animation
-  const { scrollYProgress } = useScroll();
-  const [isHeadingGreyed, setHeadingGreyed] = useState(false);
-  const [showCultureHeading, setShowCultureHeading] = useState(false);
-  const [culturePromotionAnimationIndex, setCulturePromotionAnimationIndex] =
-    useState(0);
-  useInterval(() => {
-    setCulturePromotionAnimationIndex(1);
-  }, 2000);
-  useInterval(() => setHeadingGreyed(true), 3200);
-  useInterval(() => setShowCultureHeading(true), 4000);
-  const [isECTextLocking, setECTextLocking] = useState(false);
-  useEffect(() => {
-    // @ts-ignore: Not typed
-    if (scrollYProgress.current >= 0.3) {
-      setECTextLocking(true);
-    }
-  }, [scrollYProgress]);
-
-  function ECText() {
-    return (
-      <>
-        <div className="flex flex-row md:space-x-5">
-          <h2 style={{ fontSize: "5em" }} className="leading-none">
-            The new
-          </h2>
-        </div>
-        <div className="flex flex-row md:space-x-5">
-          <h2 style={{ fontSize: "5em" }} className="leading-none">
-            Hikium
-          </h2>
-          <h2 style={{ fontSize: "5em" }} className="leading-none">
-            Tempo
-          </h2>
-        </div>
-      </>
-    );
-  }
-  function CultureText() {
-    return (
-      <>
-        <div className="flex flex-row md:space-x-5">
-          <h2 style={{ fontSize: "5em" }} className="leading-none">
-            Composes
-          </h2>
-        </div>
-        <div>
-          <Suspense
-            fallback={
-              <h2
-                style={{ fontSize: "5em" }}
-                className="leading-none md:hidden"
-              >
-                Composes {showCultureHeading ? "culture" : "websites"}
-              </h2>
-            }
-          >
-            {showCultureHeading ? (
-              <h2 style={{ fontSize: "5em" }} className="leading-none">
-                culture
-              </h2>
-            ) : (
-              <h2
-                style={{
-                  fontSize: "5em",
-                  color: isHeadingGreyed ? "#9ca3af" : "inherit",
-                }}
-                className="leading-none"
-              >
-                websites
-              </h2>
-            )}
-          </Suspense>
-        </div>
-      </>
-    );
-  }
-
-  const culturePromotionAnimationTabs = [
-    { component: <ECText /> },
-    { component: <CultureText /> },
+  // "On" highlight colours
+  const onBadgeHighlightYellow = "bg-highlight text-black";
+  const onBadgeHighlightBlue = "bg-[#323cc1] text-white";
+  const onBadgeHighlightOrange = "bg-[#ff8364] text-black";
+  const onBadgeHighlightTeal = "bg-[#00ab8e] text-white";
+  const onBadgeHighlightRed = "bg-[#c6007e] text-white";
+  const [onBadgeHighlightIndex, setOnBadgeHighlightIndex] = useState(0);
+  const [onBadgeHighlight, setOnBadgeHighlight] = useState(
+    onBadgeHighlightYellow
+  );
+  const onBadgeHighlightOptions = [
+    onBadgeHighlightYellow,
+    onBadgeHighlightBlue,
+    onBadgeHighlightOrange,
+    onBadgeHighlightTeal,
+    onBadgeHighlightRed,
   ];
+  useInterval(() => {
+    setOnBadgeHighlightIndex((colourFiltersDemoIndex + 1) % 5);
+    setOnBadgeHighlight(onBadgeHighlightOptions[onBadgeHighlightIndex]);
+  }, 2000);
 
   return (
     <>
@@ -164,151 +88,24 @@ export default function Home() {
           content="Building the revolutionary Hikium Experience Composer website builder"
         />
       </Head>
+
       <main className="flex flex-col space-y-48">
-        {/* Headline marketing - our brand collaborations */}
-        <section className="w-screen">
-          <div className="hidden md:flex flex-row justify-between px-52">
-            <div className="flex flex-col justify-between">
-              {isECTextLocking ? (
-                <div className="flex flex-col space-y-0">
-                  <ECText />
-                </div>
-              ) : (
-                <AnimatePresence mode="wait">
-                  <m.div
-                    key={culturePromotionAnimationIndex}
-                    initial={{ x: 10, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -10, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex flex-col space-y-0"
-                  >
-                    {
-                      culturePromotionAnimationTabs[
-                        culturePromotionAnimationIndex
-                      ].component
-                    }
-                  </m.div>
-                </AnimatePresence>
-              )}
-              <div className="flex flex-col md:flex-row space-y-2 md:space-x-5">
-                {/* Album cover */}
-                <Image
-                  src={imageElainaPromotionAlbum}
-                  alt="Serendipity album"
-                  layout="fixed"
-                  width={150}
-                  height={150}
-                  style={{
-                    borderTopLeftRadius: "1em",
-                    borderTopRightRadius: "1em",
-                    borderBottomLeftRadius: "1em",
-                    borderBottomRightRadius: "1em",
-                  }}
-                />
-                <div className="flex flex-col space-y-5 justify-end items-start">
-                  <div className="flex flex-col space-y-0">
-                    <SupplementaryText>Serendipity</SupplementaryText>
-                    <SupplementaryText>Elaina Paterakis</SupplementaryText>
-                  </div>
-                  <Link
-                    href="https://share.amuse.io/album/elaina-paterakis-serendipity"
-                    passHref
-                  >
-                    <Button icon={<IconBrandSpotify />}>
-                      Stream the Album
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col space-y-10">
-              <Image
-                src={imageElainaPromotionPrimary}
-                alt="Elaina Paterakis at the beach"
-                layout="fixed"
-                width={400}
-                height={450}
-                style={{
-                  borderTopLeftRadius: "1em",
-                  borderTopRightRadius: "1em",
-                  borderBottomLeftRadius: "1em",
-                  borderBottomRightRadius: "1em",
-                }}
-                priority
-              />
-              <div className="flex flex-col md:flex-row space-y-2 md:space-x-5 justify-center items-end">
-                <SupplementaryText className="flex justify-center items-center text-end">
-                  Coming in 2023
-                </SupplementaryText>
-                <Button icon={<IconArrowRight />} isDisabled>
-                  Open the Tempo App
-                </Button>
-              </div>
-            </div>
+        <section className="flex flex-col space-y-10 px-5 lg:px-52 mt-32">
+          <div className="flex flex-col space-y-2">
+            <h1 className="text-7xl">
+              Turn an idea{" "}
+              <span className={`${onBadgeHighlight} rounded-full px-5`}>
+                on
+              </span>
+              .
+            </h1>
           </div>
-          {/* Mobile */}
-          <div className="flex md:hidden flex-col space-y-20">
-            <div className="flex justify-center items-center">
-              <Image
-                src={imageElainaPromotionPrimary}
-                alt="Elaina Paterakis at the beach"
-                layout="fixed"
-                width={360}
-                height={450}
-                style={{
-                  borderTopLeftRadius: "1em",
-                  borderTopRightRadius: "1em",
-                  borderBottomLeftRadius: "1em",
-                  borderBottomRightRadius: "1em",
-                  paddingLeft: "0.25rem",
-                  paddingRight: "0.25rem",
-                }}
-                priority
-              />
-            </div>
-            <div className="px-5">
-              {isECTextLocking ? (
-                <div className="flex flex-col space-y-0">
-                  <ECText />
-                </div>
-              ) : (
-                <AnimatePresence mode="wait">
-                  <m.div
-                    key={culturePromotionAnimationIndex}
-                    initial={{ x: 10, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -10, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex flex-col space-y-0"
-                  >
-                    {
-                      culturePromotionAnimationTabs[
-                        culturePromotionAnimationIndex
-                      ].component
-                    }
-                  </m.div>
-                </AnimatePresence>
-              )}
-            </div>
-            <div className="flex flex-col space-y-2 px-5">
-              <Button icon={<IconArrowRight />} isDisabled>
-                Open the Tempo App
-              </Button>
-              <SupplementaryText>Coming in 2023</SupplementaryText>
-            </div>
-            <div className="flex flex-col space-y-5 px-5">
-              <div className="flex flex-col space-y-0">
-                <SupplementaryText>Serendipity</SupplementaryText>
-                <SupplementaryText>Elaina Paterakis</SupplementaryText>
-              </div>
-              <Link
-                href="https://share.amuse.io/album/elaina-paterakis-serendipity"
-                passHref
-              >
-                <Button icon={<IconBrandSpotify />}>Stream the Album</Button>
-              </Link>
-            </div>
+          <p className="text-xl lg:w-2/5">
+            Start with a template. Make it real. All-new Hikium Tempo website
+            builder.
+          </p>
+          <div className="flex lg:w-1/2">
+            <Button isDisabled>Coming in September</Button>
           </div>
         </section>
 
@@ -530,7 +327,7 @@ export default function Home() {
             <h2>Tempo is near</h2>
             <p className="text-xl">The new way to create.</p>
           </div>
-          <Button isDisabled>Coming in 2023</Button>
+          <Button isDisabled>Coming in September</Button>
         </section>
 
         <hr />

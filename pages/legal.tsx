@@ -83,9 +83,6 @@ export default function Legal() {
           <section className="flex flex-col space-y-5">
             <h2 className="text-2xl">Terms</h2>
             <div className="flex flex-col space-y-2">
-              <Link href="/legal/terms/ec" passHref>
-                <Button>Hikium Experience Composer Terms of Usage</Button>
-              </Link>
               <Link href="/legal/terms/website" passHref>
                 <Button>Hikium Marketing Website Terms of Usage</Button>
               </Link>
@@ -94,9 +91,6 @@ export default function Legal() {
           <section className="flex flex-col space-y-5">
             <h2 className="text-2xl">Open-Source at Hikium</h2>
             <div className="flex flex-col space-y-2">
-              <Link href="/legal/opensource/oss-licenses" passHref>
-                <Button>Open-Source Software License Information</Button>
-              </Link>
               <Link href="/legal/opensource/font-licenses" passHref>
                 <Button>Open-Source Font License Information</Button>
               </Link>
@@ -105,10 +99,9 @@ export default function Legal() {
           <section className="flex flex-col space-y-5">
             <h2 className="text-2xl">Team</h2>
             <div className="flex flex-col space-y-2">
-              <Link href="/legal/affiliation" passHref>
-                <Button>Project Affiliation Notice</Button>
+              <Link href="/contact" passHref>
+                <Button isDisabled>Contact Hikium</Button>
               </Link>
-              <Button isDisabled>Contact Hikium</Button>
             </div>
           </section>
         </main>

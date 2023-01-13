@@ -312,24 +312,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Homepage Video */}
-        {/* <section className="flex px-5 lg:px-52">
-          <video
-            autoPlay={true}
-            loop
-            controlsList="nodownload"
-            style={{
-              borderTopLeftRadius: "2em",
-              borderTopRightRadius: "2em",
-              borderBottomLeftRadius: "2em",
-              borderBottomRightRadius: "2em",
-            }}
-            className="w-fit h-fit"
-          >
-            <source src="video/animation.mp4" type="video/mp4" />
-          </video>
-        </section> */}
-
         {/* Easy to use section */}
         <section
           className="flex flex-col space-y-10 lg:flex-row lg:justify-between lg:space-y-0 px-5 lg:px-52"

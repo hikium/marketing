@@ -25,12 +25,7 @@ export const useAckee = (
     if (isBrowser === false) return;
 
     return ackeeTracker.create(environment.server, options);
-  }, [
-    environment.server,
-    options.detailed,
-    options.ignoreLocalhost,
-    options.ignoreOwnVisits,
-  ]);
+  }, [environment.server, options]);
 
   useEffect(() => {
     if (!ackeeInstance) {
@@ -54,7 +49,7 @@ export const useAckee = (
       ...attributes,
       siteLocation: url.href,
     }).stop;
-  }, [ackeeInstance, pathname, environment.domainId]);
+  }, [options.detailed, pathname, environment.domainId]);
 };
 
 export default useAckee;

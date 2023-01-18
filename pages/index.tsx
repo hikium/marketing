@@ -65,7 +65,7 @@ export default function Home() {
             <h1 className="text-7xl">All-new Hikium Tempo.</h1>
           </div>
           <p className="text-xl lg:w-2/5">
-            Start with a template. Make it real.
+            Start with a template. Make anything real.
           </p>
           <div className="flex lg:w-1/2">
             <Button isDisabled>Coming this year</Button>

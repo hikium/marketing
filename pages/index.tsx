@@ -4,9 +4,6 @@ import type { ReactElement } from "react";
 // SEO
 import Head from "next/head";
 
-// Routing
-import Link from "next/link";
-
 // Layouts
 import Layout from "components/layouts/Layout";
 
@@ -14,44 +11,10 @@ import Layout from "components/layouts/Layout";
 import Button from "components/system/Button";
 import SupplementaryText from "components/system/SupplementaryText";
 
-// Third party design
-import { IconLock, IconWifiOff } from "@tabler/icons";
-
-// First party components
-import BrandLogo from "components/brand/BrandLogo";
-
-// Images
-import Image from "next/image";
-import imageChildThinking from "/public/images/child-canvas.webp";
-import imageChildCoding from "/public/images/child-code.webp";
-import imageCity from "/public/images/city.webp";
-
-import { useEffect, useState, Suspense } from "react";
+import { useState } from "react";
 import { useInterval } from "hooks/useInterval";
 
 export default function Home() {
-  // Dynamic colours
-  const filterNone = "";
-  const filterHueRotate180 = "hue-rotate-180";
-  const filterGreyscale = "grayscale";
-  const filterSepia = "sepia";
-
-  // Change the colour value of the string
-  const [colourFiltersDemoIndex, setColourFiltersDemoIndex] = useState(0);
-  const [colourFiltersDemo, setColourFiltersDemo] = useState(filterNone);
-  const colourFiltersDemoColours = [
-    filterNone,
-    filterHueRotate180,
-    filterGreyscale,
-    filterSepia,
-  ];
-
-  // Every two seconds, go to the next colour
-  useInterval(() => {
-    setColourFiltersDemoIndex((colourFiltersDemoIndex + 1) % 4);
-    setColourFiltersDemo(colourFiltersDemoColours[colourFiltersDemoIndex]);
-  }, 2000);
-
   // "On" highlight colours
   const onBadgeHighlightYellow = "bg-highlight text-black";
   const onBadgeHighlightBlue = "bg-[#323cc1] text-white";
@@ -70,7 +33,7 @@ export default function Home() {
     onBadgeHighlightRed,
   ];
   useInterval(() => {
-    setOnBadgeHighlightIndex((colourFiltersDemoIndex + 1) % 5);
+    setOnBadgeHighlightIndex((onBadgeHighlightIndex + 1) % 5);
     setOnBadgeHighlight(onBadgeHighlightOptions[onBadgeHighlightIndex]);
   }, 2000);
 

@@ -58,7 +58,7 @@ export default function Legal() {
         >
           <div />
           <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-8 justify-center align-center">
-            <div className="flex p-5 bg-brand rounded-3xl">
+            <div className="flex p-5 bg-brand text-white dark:text-black rounded-3xl">
               <IconGavel width={64} height={64} />
             </div>
             <h1 style={{ fontSize: "4em" }}>Hikium Legal</h1>

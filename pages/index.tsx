@@ -80,12 +80,12 @@ export default function Home() {
         <title>Hikium</title>
         <meta
           name="description"
-          content="Building the revolutionary Hikium Experience Composer website builder."
+          content="Building the revolutionary Hikium Tempo website builder."
         />
         <meta name="og:title" content="Hikium" />
         <meta
           name="og:description"
-          content="Building the revolutionary Hikium Experience Composer website builder"
+          content="Building the revolutionary Hikium Tempo website builder"
         />
       </Head>
 

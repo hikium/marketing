@@ -46,7 +46,7 @@ export default function Application({
   return (
     <MotionConfig reducedMotion="user">
       <LazyMotion features={domAnimation} strict>
-        <div className="bg-gray-50 dark:bg-black text-black dark:text-white">
+        <div className="bg-neutral-50 dark:bg-black contrast-more:bg-white text-black dark:text-white">
           {getLayout(<Component {...pageProps} />)}
         </div>
       </LazyMotion>

@@ -1,7 +1,7 @@
 // Routing
 import Link from "next/link";
 
-// Design
+// Third party design
 import { IconExternalLink } from "@tabler/icons";
 
 interface ExternalLinkProps {
@@ -13,7 +13,7 @@ interface ExternalLinkProps {
 /**
  * Link with a `_target="blank"` and an icon indicating an external link. Uses Next.js `<Link>` internally.
  *
- * @remarks A `<a>`.
+ * Forked from EC.
  *
  * @public
  */
@@ -24,7 +24,7 @@ export default function ExternalLink({
 }: ExternalLinkProps) {
   return (
     <Link href={href} passHref>
-      <a target="_blank" className={className}>
+      <a className={className} target="_blank">
         <span className="underline underline-offset-4">{children}</span>
         {/* Center the icon with the parent*/}
         <span className="flex items-center justify-center">

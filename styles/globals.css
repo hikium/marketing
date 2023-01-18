@@ -4,6 +4,11 @@
 
 /* Custom fonts */
 @layer base {
+  @media (prefers-color-scheme: dark) {
+    html {
+      background-color: black;
+    }
+  }
   html {
     font-family: "Public Sans", system-ui, sans-serif;
   }

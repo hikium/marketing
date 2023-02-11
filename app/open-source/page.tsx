@@ -14,7 +14,7 @@ import { Package } from "@geist-ui/icons";
 // Layout
 import Footer from "../../components/layout/Footer";
 
-export default function HomePage() {
+export default function OpenSourcePage() {
   return (
     <>
       <Grid>

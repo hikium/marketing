@@ -39,6 +39,13 @@ export default function Footer() {
                 </Link>
               </Text>
             </Grid>
+            <Grid>
+              <Text type="secondary" small>
+                <Link href="/contact" style={{ color: "inherit" }}>
+                  Contact
+                </Link>
+              </Text>
+            </Grid>
           </GridContainer>
         </Grid>
         <Grid>

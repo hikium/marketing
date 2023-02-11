@@ -36,4 +36,26 @@ module.exports = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/legal",
+        destination:
+          "https://hikium.notion.site/Hikium-Legal-4e1be0e09cfd4aa3a8d4b90f1b60b088",
+        permanent: true,
+      },
+      {
+        source: "/legal/:slug",
+        destination:
+          "https://hikium.notion.site/Hikium-Legal-4e1be0e09cfd4aa3a8d4b90f1b60b088",
+        permanent: true,
+      },
+      {
+        source: "/legal/privacy",
+        destination:
+          "https://hikium.notion.site/Hikium-Privacy-Statement-16749aff36504bee978e92d4a568a91a",
+        permanent: true,
+      },
+    ];
+  },
 };

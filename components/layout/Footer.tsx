@@ -1,5 +1,9 @@
 // Website footer
 
+// Routing
+import Link from "next/link";
+
+// First party design
 import { Grid, GridContainer, Text, Link as GeistLink } from "../design";
 
 // Begin component
@@ -30,7 +34,9 @@ export default function Footer() {
             </Grid>
             <Grid>
               <Text type="secondary" small>
-                <GeistLink href="/open-source">Open-Source</GeistLink>
+                <Link href="/open-source" style={{ color: "inherit" }}>
+                  Open-Source
+                </Link>
               </Text>
             </Grid>
           </GridContainer>

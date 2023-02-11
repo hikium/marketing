@@ -48,7 +48,7 @@ export default function RootLayout({
               </Link>
             </PageHeader>
             <PageContent>
-              <GridContainer gap={5} direction="column">
+              <GridContainer gap={2} direction="column">
                 {children}
               </GridContainer>
             </PageContent>

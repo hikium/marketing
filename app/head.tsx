@@ -10,6 +10,17 @@ export default function Head() {
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_AU" />
 
+      <title>Hikium</title>
+      <meta property="og:title" content="Hikium" />
+      <meta
+        name="description"
+        content="We're building Hikium Tempo, the creativity platform of tomorrow."
+      />
+      <meta
+        property="og:description"
+        content="We're building the Hikium Tempo creativity platform"
+      />
+
       {/* Favicon */}
       <link rel="icon" href="/brand-assets/favicon-196.ico" />
 

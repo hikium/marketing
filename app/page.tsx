@@ -46,9 +46,7 @@ export default function HomePage() {
                     <Text>Start with a template. Make anything real.</Text>
                   </Grid>
                   <Grid>
-                    <Text>
-                      We're building Hikium Tempo right now. Check back later.
-                    </Text>
+                    <Text>We're building it right now. More soon.</Text>
                   </Grid>
                   <Grid>
                     <Button disabled>Coming Late 2023</Button>

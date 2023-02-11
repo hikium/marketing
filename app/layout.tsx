@@ -1,10 +1,26 @@
 // The global "root" layout
 // Replaces _app.tsx in Next.js 12
 
+// Routing
+import Link from "next/link";
+
 // Global styles
 import "@fontsource/dosis/700.css";
 import "@fontsource/public-sans/400.css";
 import "@fontsource/public-sans/600.css";
+
+// Global navigation
+import {
+  GridContainer,
+  Page,
+  PageContent,
+  PageFooter,
+  PageHeader,
+  Text,
+  Grid,
+  Link as GeistLink,
+} from "../components/design";
+import BrandWordmark from "../components/brand/BrandWordmark";
 
 // Global providers
 import GeistProvider from "../components/design/GeistProvider";
@@ -20,7 +36,24 @@ export default function RootLayout({
       <head />
 
       <GeistProvider>
-        <body>{children}</body>
+        <body>
+          <Page>
+            <PageHeader>
+              <Link href="/" passHref>
+                <div
+                  style={{ width: "5rem", height: "1rem", cursor: "pointer" }}
+                >
+                  <BrandWordmark />
+                </div>
+              </Link>
+            </PageHeader>
+            <PageContent>
+              <GridContainer gap={5} direction="column">
+                {children}
+              </GridContainer>
+            </PageContent>
+          </Page>
+        </body>
       </GeistProvider>
     </html>
   );

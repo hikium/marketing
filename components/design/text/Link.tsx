@@ -1,5 +1,4 @@
-// Routing
-// import NextLink from "next/link";
+"use client";
 
 // Third party design
 import { Link as GeistLink } from "@geist-ui/core";
@@ -10,6 +9,7 @@ interface LinkProps {
   useNewTab?: boolean;
   icon?: boolean;
   block?: boolean;
+  target?: string;
 }
 /**
  * Navigate the user to another screen (page), or to another website. Uses Next.js `<Link>` under the hood.
@@ -39,6 +39,8 @@ export default function Link({
       href={href}
       target={useNewTab ? "_blank" : undefined}
       icon={icon}
+      // @ts-ignore: not typed
+      highlight={false}
     >
       {children}
     </GeistLink>

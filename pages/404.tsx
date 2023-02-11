@@ -1,49 +1,46 @@
-// Types
-import { ReactElement } from "react";
-
-// SEO
-import Head from "next/head";
-
 // Routing
 import Link from "next/link";
 
-// First party components
-import Button from "components/system/Button";
-import SupplementaryText from "components/system/SupplementaryText";
+// Head and SEO
+import Head from "next/head";
 
-// Design
-import { IconArrowRight } from "@tabler/icons";
+// First party design
+import {
+  Button,
+  Card,
+  Grid,
+  Text,
+  Page,
+  PageContent,
+} from "../components/design";
+import GeistProvider from "../components/design/GeistProvider";
 
-// Layouts
-import Layout from "components/layouts/Layout";
-
+// Begin page
 export default function Custom404() {
   return (
-    <div className="flex flex-col py-2">
+    <>
       <Head>
-        <title>Hikium &mdash; Page Not Found</title>
-        <meta name="description" content="This page can't be found." />
-        <meta name="og:title" content="Hikium" />
-        <meta name="og:description" content="This page can't be found" />
+        <title>Hikium - Page not found</title>
+        <meta property="og:title" content="Hikium" />
+        <meta name="description" content="Hikium" />
+        <meta property="og:description" content="Page not found at Hikium" />
       </Head>
 
-      <div className="flex flex-col space-y-10">
-        <header className="flex flex-col-reverse md:flex-row md:justify-between">
-          <h1>Where? On the mountain!</h1>
-          <SupplementaryText className="mb-5 md:mb-0">
-            HTTP 404
-          </SupplementaryText>
-        </header>
-        <main className="flex flex-col space-y-10 w-fit">
-          <p>This page can't be found, but let's hike to Home.</p>
-          <Link href="/" passHref>
-            <Button icon={<IconArrowRight />}>Go Home</Button>
-          </Link>
-        </main>
-      </div>
-    </div>
+      {/* /app/layout.tsx does not apply to /pages */}
+      <GeistProvider>
+        <Page>
+          <PageContent>
+            <Grid>
+              <Card>
+                <Text>This page doesn't exist.</Text>
+                <Link href="/" passHref>
+                  <Button>Go Home</Button>
+                </Link>
+              </Card>
+            </Grid>
+          </PageContent>
+        </Page>
+      </GeistProvider>
+    </>
   );
 }
-Custom404.getLayout = function getLayout(page: ReactElement) {
-  return <Layout manualMargin={false}>{page}</Layout>;
-};

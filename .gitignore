@@ -2,6 +2,7 @@
 
 # Application generated - XML sitemaps
 /public/sitemap*
+/public/robots.txt
 
 # dependencies
 /node_modules

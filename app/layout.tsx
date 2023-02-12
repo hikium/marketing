@@ -43,9 +43,15 @@ export default function RootLayout({
           <Page>
             <PageHeader>
               <Link href="/" passHref>
-                <a style={{ width: "5rem", height: "1rem", cursor: "pointer" }}>
+                <div
+                  style={{
+                    width: "5rem",
+                    height: "1rem",
+                    cursor: "pointer",
+                  }}
+                >
                   <BrandWordmark />
-                </a>
+                </div>
               </Link>
             </PageHeader>
             <PageContent>

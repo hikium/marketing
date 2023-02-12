@@ -24,6 +24,7 @@ import BrandWordmark from "../components/brand/BrandWordmark";
 
 // Global providers
 import GeistProvider from "../components/design/GeistProvider";
+import AckeeProvider from "./AckeeProvider";
 
 export default function RootLayout({
   children,
@@ -35,13 +36,19 @@ export default function RootLayout({
       {/* <head /> contains the nearest parent head.tsx. https://beta.nextjs.org/docs/api-reference/file-conventions/head */}
       <head />
 
+      <AckeeProvider />
+
       <GeistProvider>
         <body>
           <Page>
             <PageHeader>
               <Link href="/" passHref>
                 <div
-                  style={{ width: "5rem", height: "1rem", cursor: "pointer" }}
+                  style={{
+                    width: "5rem",
+                    height: "1rem",
+                    cursor: "pointer",
+                  }}
                 >
                   <BrandWordmark />
                 </div>

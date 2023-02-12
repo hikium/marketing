@@ -24,6 +24,7 @@ import BrandWordmark from "../components/brand/BrandWordmark";
 
 // Global providers
 import GeistProvider from "../components/design/GeistProvider";
+import AckeeProvider from "./AckeeProvider";
 
 export default function RootLayout({
   children,
@@ -34,6 +35,8 @@ export default function RootLayout({
     <html lang="en">
       {/* <head /> contains the nearest parent head.tsx. https://beta.nextjs.org/docs/api-reference/file-conventions/head */}
       <head />
+
+      <AckeeProvider />
 
       <GeistProvider>
         <body>

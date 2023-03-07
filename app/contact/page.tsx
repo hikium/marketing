@@ -14,34 +14,35 @@ export default function ContactPage() {
   return (
     <>
       <Grid>
-        <Mail size={36} />
-      </Grid>
-
-      <Grid>
-        <Text h1>Contact Hikium</Text>
-      </Grid>
-
-      <Grid>
-        <GridContainer gap={0} direction="column">
+        <GridContainer
+          justify="center"
+          alignContent="center"
+          direction="column"
+        >
           <Grid>
-            <Text>Thanks for reaching out to the Hikium team!</Text>
-          </Grid>
-          <Grid>
-            <Text>
-              We prefer email. We're in Australia, so we operate under the
-              UTC+10 or UTC+11 time zones.
-            </Text>
+            <GridContainer gap={1} direction="column">
+              <Grid>
+                <Mail size={48} />
+              </Grid>
+              <Grid>
+                <Text h1>Get in touch.</Text>
+              </Grid>
+              <Grid>
+                <Text>
+                  Simply email us at{" "}
+                  <GeistLink href="mailto:hikium-team@outlook.com" icon>
+                    hikium-team@outlook.com
+                  </GeistLink>
+                </Text>
+              </Grid>
+              <Grid>
+                <Text small type="secondary">
+                  We operate under the UTC+10 or UTC+11 time zones.
+                </Text>
+              </Grid>
+            </GridContainer>
           </Grid>
         </GridContainer>
-      </Grid>
-
-      <Grid>
-        <Text>
-          Simply email us at{" "}
-          <GeistLink href="mailto:hikium-team@outlook.com" icon>
-            hikium-team@outlook.com
-          </GeistLink>
-        </Text>
       </Grid>
 
       <Grid>

@@ -20,20 +20,6 @@ export default function Footer() {
           <GridContainer gap={2} direction="row">
             <Grid>
               <Text type="secondary" small>
-                <GeistLink href="/legal" useNewTab icon>
-                  Legal
-                </GeistLink>
-              </Text>
-            </Grid>
-            <Grid>
-              <Text type="secondary" small>
-                <GeistLink href="/legal/privacy" useNewTab icon>
-                  Privacy
-                </GeistLink>
-              </Text>
-            </Grid>
-            <Grid>
-              <Text type="secondary" small>
                 <Link href="/open-source" style={{ color: "inherit" }}>
                   Open-Source
                 </Link>
@@ -44,6 +30,13 @@ export default function Footer() {
                 <Link href="/contact" style={{ color: "inherit" }}>
                   Contact
                 </Link>
+              </Text>
+            </Grid>
+            <Grid>
+              <Text type="secondary" small>
+                <GeistLink href="/legal" useNewTab icon>
+                  Legal &amp; Privacy
+                </GeistLink>
               </Text>
             </Grid>
           </GridContainer>

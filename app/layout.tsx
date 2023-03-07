@@ -45,8 +45,6 @@ export default function RootLayout({
               <Link href="/" passHref>
                 <div
                   style={{
-                    width: "5rem",
-                    height: "1rem",
                     cursor: "pointer",
                   }}
                 >

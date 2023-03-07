@@ -10,7 +10,6 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@fontsource/dosis": "^4.5.10",
     "@fontsource/public-sans": "^4.5.11",
     "@geist-ui/core": "^2.3.8",
     "@geist-ui/icons": "^1.0.2",
@@ -21,7 +20,6 @@
     "ackee-tracker": "^5.1.0",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
-    "license-checker": "^25.0.1",
     "next": "^13.1.1-canary.1",
     "next-sitemap": "^3.1.43",
     "react": "18.2.0",
@@ -29,7 +27,6 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@types/ackee-tracker": "^5.0.2",
-    "@types/license-checker": "^25.0.3"
+    "@types/ackee-tracker": "^5.0.2"
   }
 }

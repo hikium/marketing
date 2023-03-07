@@ -16,16 +16,19 @@ export default function HomePage() {
           <Grid>
             <GridContainer gap={1} direction="column">
               <Grid>
-                <Text h1>All-new Hikium Tempo.</Text>
+                <Text h1>Millions of print possibilities.</Text>
               </Grid>
               <Grid>
-                <Text>Start with a template. Make anything real.</Text>
+                <Text h1>Underscored by culture.</Text>
               </Grid>
               <Grid>
-                <Text>We're building it right now. More soon.</Text>
+                <Text>The all-new Hikium Tempo creativity platform.</Text>
               </Grid>
               <Grid>
-                <Button disabled>Coming Late 2023</Button>
+                <Text>Coming later this year.</Text>
+              </Grid>
+              <Grid>
+                <Button disabled>Coming 2023</Button>
               </Grid>
             </GridContainer>
           </Grid>

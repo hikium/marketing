@@ -13,7 +13,7 @@ export default function Footer() {
       <GridContainer gap={5} direction="row">
         <Grid>
           <Text type="secondary" small>
-            The beginning.
+            Hike higher.
           </Text>
         </Grid>
         <Grid>
@@ -22,13 +22,6 @@ export default function Footer() {
               <Text type="secondary" small>
                 <Link href="/open-source" style={{ color: "inherit" }}>
                   Open-Source
-                </Link>
-              </Text>
-            </Grid>
-            <Grid>
-              <Text type="secondary" small>
-                <Link href="/contact" style={{ color: "inherit" }}>
-                  Contact
                 </Link>
               </Text>
             </Grid>
